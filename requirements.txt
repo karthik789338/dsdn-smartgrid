@@ -1,0 +1,12 @@
+numpy
+scikit-learn==1.9.1
+xgboost
+opendssdirect-py==0.9.4
+spacy==3.8.18
+ollama
+# DNP3 master/outstation driver (real-protocol end-to-end test)
+pydnp3
+# RAG store for the online mitigation-retrieval study
+chromadb
+# spaCy English model (dependency-parse baseline):
+#   python -m spacy download en_core_web_sm
