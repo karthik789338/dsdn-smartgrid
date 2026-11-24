@@ -1,0 +1,301 @@
+{
+  "experiment": "E11b_deterministic_faithfulness_verifier",
+  "method": "ground explanation text against the structured decision record (oracle physics verdict + target + specificity); deterministic, zero position bias.",
+  "part_a_verifier": {
+    "per_defect_acc": {
+      "wrong_action_target": 1.0,
+      "physics_contradict": 1.0,
+      "vacuous": 1.0,
+      "mismatched": 1.0
+    },
+    "overall_acc": 1.0,
+    "n_decisions": 8,
+    "rows": [
+      {
+        "id": 0,
+        "defect": "wrong_action_target",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": -2.0
+      },
+      {
+        "id": 0,
+        "defect": "physics_contradict",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": 2.0
+      },
+      {
+        "id": 0,
+        "defect": "vacuous",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": 0.0
+      },
+      {
+        "id": 0,
+        "defect": "mismatched",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": -1.0
+      },
+      {
+        "id": 1,
+        "defect": "wrong_action_target",
+        "correct": true,
+        "score_faithful": 2.0,
+        "score_defect": -2.0
+      },
+      {
+        "id": 1,
+        "defect": "physics_contradict",
+        "correct": true,
+        "score_faithful": 2.0,
+        "score_defect": 1.0
+      },
+      {
+        "id": 1,
+        "defect": "vacuous",
+        "correct": true,
+        "score_faithful": 2.0,
+        "score_defect": 0.0
+      },
+      {
+        "id": 1,
+        "defect": "mismatched",
+        "correct": true,
+        "score_faithful": 2.0,
+        "score_defect": 0.0
+      },
+      {
+        "id": 2,
+        "defect": "wrong_action_target",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": -2.0
+      },
+      {
+        "id": 2,
+        "defect": "physics_contradict",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": 2.0
+      },
+      {
+        "id": 2,
+        "defect": "vacuous",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": 0.0
+      },
+      {
+        "id": 2,
+        "defect": "mismatched",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": 0.0
+      },
+      {
+        "id": 3,
+        "defect": "wrong_action_target",
+        "correct": true,
+        "score_faithful": 2.0,
+        "score_defect": -2.0
+      },
+      {
+        "id": 3,
+        "defect": "physics_contradict",
+        "correct": true,
+        "score_faithful": 2.0,
+        "score_defect": 1.0
+      },
+      {
+        "id": 3,
+        "defect": "vacuous",
+        "correct": true,
+        "score_faithful": 2.0,
+        "score_defect": 0.0
+      },
+      {
+        "id": 3,
+        "defect": "mismatched",
+        "correct": true,
+        "score_faithful": 2.0,
+        "score_defect": 0.0
+      },
+      {
+        "id": 4,
+        "defect": "wrong_action_target",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": -1.0
+      },
+      {
+        "id": 4,
+        "defect": "physics_contradict",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": 2.0
+      },
+      {
+        "id": 4,
+        "defect": "vacuous",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": 0.0
+      },
+      {
+        "id": 4,
+        "defect": "mismatched",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": -4.0
+      },
+      {
+        "id": 5,
+        "defect": "wrong_action_target",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": -2.0
+      },
+      {
+        "id": 5,
+        "defect": "physics_contradict",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": 2.0
+      },
+      {
+        "id": 5,
+        "defect": "vacuous",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": 0.0
+      },
+      {
+        "id": 5,
+        "defect": "mismatched",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": 0.0
+      },
+      {
+        "id": 6,
+        "defect": "wrong_action_target",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": -1.0
+      },
+      {
+        "id": 6,
+        "defect": "physics_contradict",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": 2.0
+      },
+      {
+        "id": 6,
+        "defect": "vacuous",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": 0.0
+      },
+      {
+        "id": 6,
+        "defect": "mismatched",
+        "correct": true,
+        "score_faithful": 3.0,
+        "score_defect": -1.0
+      },
+      {
+        "id": 7,
+        "defect": "wrong_action_target",
+        "correct": true,
+        "score_faithful": 1.0,
+        "score_defect": -2.0
+      },
+      {
+        "id": 7,
+        "defect": "physics_contradict",
+        "correct": true,
+        "score_faithful": 1.0,
+        "score_defect": 0.0
+      },
+      {
+        "id": 7,
+        "defect": "vacuous",
+        "correct": true,
+        "score_faithful": 1.0,
+        "score_defect": 0.0
+      },
+      {
+        "id": 7,
+        "defect": "mismatched",
+        "correct": true,
+        "score_faithful": 1.0,
+        "score_defect": -2.0
+      }
+    ]
+  },
+  "part_b_live_opendss": {
+    "feeder": "/home/ubuntu/gridcad/f13p/13Bus/IEEE13Nodeckt.dss",
+    "n_trials": 7,
+    "acc": 1.0,
+    "trials": [
+      {
+        "pu": 0.96,
+        "vmin": 0.9598,
+        "vmax": 1.0557,
+        "oracle_safe": false,
+        "verifier_correct": true
+      },
+      {
+        "pu": 0.98,
+        "vmin": 0.9645,
+        "vmax": 1.0593,
+        "oracle_safe": false,
+        "verifier_correct": true
+      },
+      {
+        "pu": 0.99,
+        "vmin": 0.9628,
+        "vmax": 1.0577,
+        "oracle_safe": false,
+        "verifier_correct": true
+      },
+      {
+        "pu": 1.0,
+        "vmin": 0.9607,
+        "vmax": 1.0559,
+        "oracle_safe": false,
+        "verifier_correct": true
+      },
+      {
+        "pu": 1.02,
+        "vmin": 0.9702,
+        "vmax": 1.0643,
+        "oracle_safe": false,
+        "verifier_correct": true
+      },
+      {
+        "pu": 1.04,
+        "vmin": 0.9718,
+        "vmax": 1.0657,
+        "oracle_safe": false,
+        "verifier_correct": true
+      },
+      {
+        "pu": 1.06,
+        "vmin": 0.9725,
+        "vmax": 1.0664,
+        "oracle_safe": false,
+        "verifier_correct": true
+      }
+    ]
+  },
+  "llm_ensemble_baseline_E11": {
+    "source": "/home/ubuntu/gridcad/E11_judge_summary.json",
+    "note": "robust_acc per defect from the 4-judge majority ensemble"
+  },
+  "limitation": "Catches defects that surface as a mismatch with the structured record (wrong verdict, wrong/absent target, vacuity, copied text). A fluent, correctly-grounded but subtly-misleading explanation would pass both the verifier and the LLM judge; the verifier is a reporting/triage aid, the OpenDSS gate remains the safety authority."
+}

@@ -1,0 +1,130 @@
+{
+  "experiment": "detector_fix_R2-3_R2-4_R2-5",
+  "pcap_benign_packets": 1638,
+  "total_packets": 3978,
+  "n_classes_raw": 11,
+  "labels": [
+    "benign",
+    "cold_restart",
+    "fc_fuzzing",
+    "injection_flood",
+    "master_impersonation",
+    "recon_sweep",
+    "replay",
+    "time_sync_manip",
+    "unauthorized_operate",
+    "unsol_disable_flood",
+    "warm_restart"
+  ],
+  "behavioral_features": [
+    "fc",
+    "severity",
+    "claims_master",
+    "ingress_ok",
+    "flen",
+    "payload_len",
+    "rate_1s",
+    "interarrival",
+    "distinct_dst_1s",
+    "dup_recent"
+  ],
+  "identity_features": [
+    "sip_code",
+    "dip_code",
+    "eth_code",
+    "src_port"
+  ],
+  "class_counts": {
+    "benign": 1638,
+    "cold_restart": 96,
+    "fc_fuzzing": 144,
+    "injection_flood": 720,
+    "master_impersonation": 108,
+    "recon_sweep": 276,
+    "replay": 180,
+    "time_sync_manip": 84,
+    "unauthorized_operate": 96,
+    "unsol_disable_flood": 540,
+    "warm_restart": 96
+  },
+  "conditions": {
+    "A_full_random_LEAKY": {
+      "acc": 0.9958,
+      "macro_f1": 0.9907
+    },
+    "B_full_campaignblocked": {
+      "acc": 0.9175,
+      "macro_f1": 0.8021
+    },
+    "C_behavioral_random": {
+      "acc": 0.9657,
+      "macro_f1": 0.8864
+    },
+    "D_behavioral_campaignblocked_HONEST": {
+      "acc": 0.9646,
+      "macro_f1": 0.8954
+    }
+  },
+  "leakage_inflation_acc": 0.0312,
+  "leaky_top_features": [
+    [
+      "fc",
+      0.148
+    ],
+    [
+      "eth_code",
+      0.1374
+    ],
+    [
+      "severity",
+      0.1286
+    ],
+    [
+      "sip_code",
+      0.1183
+    ],
+    [
+      "interarrival",
+      0.0779
+    ],
+    [
+      "rate_1s",
+      0.0696
+    ],
+    [
+      "flen",
+      0.0679
+    ],
+    [
+      "payload_len",
+      0.0653
+    ]
+  ],
+  "identity_importance_share_leaky": 0.3279,
+  "model_size_ablation": {
+    "tree_d3": {
+      "leaky_acc": 0.7781,
+      "honest_acc": 0.7146
+    },
+    "rf_small": {
+      "leaky_acc": 0.9598,
+      "honest_acc": 0.9497
+    },
+    "rf_large": {
+      "leaky_acc": 0.9958,
+      "honest_acc": 0.9646
+    },
+    "gboost": {
+      "leaky_acc": 1.0,
+      "honest_acc": 0.9646
+    }
+  },
+  "ten_vs_eleven": {
+    "restart_cross_confusions": 33,
+    "restart_total_preds": 64,
+    "restart_mutual_confusion_rate": 0.516,
+    "macro_f1_11class_honest": 0.8954,
+    "macro_f1_10class_merged_honest": 0.9886,
+    "verdict": "merge cold+warm restart -> 10 classes"
+  }
+}

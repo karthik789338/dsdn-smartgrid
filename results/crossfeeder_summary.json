@@ -1,0 +1,70 @@
+[
+  {
+    "feeder": "IEEE13",
+    "baseline": {
+      "load_multiplier": 1.0,
+      "voltage_pu_min": 0.9608427430890604,
+      "voltage_pu_max": 1.0560497125472676,
+      "undervoltage_nodes": 0,
+      "overvoltage_nodes": 2,
+      "losses_kw": 112.39170905477945,
+      "node_count": 41
+    },
+    "command_auth_band": [
+      1.005,
+      1.03
+    ],
+    "undervoltage_onset_lm": 1.13,
+    "overvoltage_onset_lm": 0.8,
+    "authorized_but_physics_rejected_lm": [],
+    "non_convergent_lm": [],
+    "rollback_clean": true
+  },
+  {
+    "feeder": "IEEE34",
+    "baseline": {
+      "load_multiplier": 1.0,
+      "voltage_pu_min": 0.9230989327603906,
+      "voltage_pu_max": 1.0499968561252122,
+      "undervoltage_nodes": 4,
+      "overvoltage_nodes": 0,
+      "losses_kw": 273.5070572456656,
+      "node_count": 95
+    },
+    "command_auth_band": [
+      1.005,
+      1.03
+    ],
+    "undervoltage_onset_lm": 0.8,
+    "overvoltage_onset_lm": 1.04,
+    "authorized_but_physics_rejected_lm": [
+      1.005,
+      1.01,
+      1.02,
+      1.03
+    ],
+    "non_convergent_lm": [],
+    "rollback_clean": true
+  },
+  {
+    "feeder": "IEEE123",
+    "baseline": {
+      "load_multiplier": 1.0,
+      "voltage_pu_min": 0.9792110315255468,
+      "voltage_pu_max": 1.0499609311749871,
+      "undervoltage_nodes": 0,
+      "overvoltage_nodes": 0,
+      "losses_kw": 95.97670733542155,
+      "node_count": 278
+    },
+    "command_auth_band": [
+      1.005,
+      1.03
+    ],
+    "undervoltage_onset_lm": null,
+    "overvoltage_onset_lm": 0.84,
+    "authorized_but_physics_rejected_lm": [],
+    "non_convergent_lm": [],
+    "rollback_clean": true
+  }
+]

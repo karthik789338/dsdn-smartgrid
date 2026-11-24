@@ -1,0 +1,104 @@
+{
+  "experiment": "E2_decision_path_latency",
+  "model": "phi4-mini",
+  "n_timed": 23,
+  "warmup_dropped": 2,
+  "stages": [
+    {
+      "stage": "rag_retrieve",
+      "unit": "ms",
+      "n": 23,
+      "p50": 21.355,
+      "p95": 27.93,
+      "p99": 97.879,
+      "mean": 24.791,
+      "min": 18.786,
+      "max": 97.879
+    },
+    {
+      "stage": "prompt_build",
+      "unit": "ms",
+      "n": 23,
+      "p50": 0.017,
+      "p95": 0.018,
+      "p99": 0.018,
+      "mean": 0.017,
+      "min": 0.014,
+      "max": 0.018
+    },
+    {
+      "stage": "parse",
+      "unit": "ms",
+      "n": 23,
+      "p50": 0.051,
+      "p95": 0.075,
+      "p99": 0.08,
+      "mean": 0.053,
+      "min": 0.046,
+      "max": 0.08
+    },
+    {
+      "stage": "validate",
+      "unit": "ms",
+      "n": 23,
+      "p50": 0.016,
+      "p95": 0.022,
+      "p99": 0.023,
+      "mean": 0.017,
+      "min": 0.014,
+      "max": 0.023
+    },
+    {
+      "stage": "rule_build",
+      "unit": "ms",
+      "n": 23,
+      "p50": 0.011,
+      "p95": 0.012,
+      "p99": 0.013,
+      "mean": 0.011,
+      "min": 0.009,
+      "max": 0.013
+    },
+    {
+      "stage": "rule_path_total",
+      "unit": "ms",
+      "n": 23,
+      "p50": 0.015,
+      "p95": 0.016,
+      "p99": 0.018,
+      "mean": 0.015,
+      "min": 0.013,
+      "max": 0.018
+    },
+    {
+      "stage": "llm_synthesis",
+      "unit": "s",
+      "n": 23,
+      "p50": 1.891,
+      "p95": 1.98,
+      "p99": 2.036,
+      "mean": 1.914,
+      "min": 1.828,
+      "max": 2.036
+    },
+    {
+      "stage": "llm_path_total",
+      "unit": "s",
+      "n": 23,
+      "p50": 1.931,
+      "p95": 2.006,
+      "p99": 2.057,
+      "mean": 1.939,
+      "min": 1.848,
+      "max": 2.057
+    }
+  ],
+  "headline": {
+    "llm_synthesis_p50_s": 1.891,
+    "llm_synthesis_p95_s": 1.98,
+    "llm_path_total_p50_s": 1.931,
+    "rule_path_total_p50_ms": 0.015,
+    "speedup_rule_vs_llm_x": 132831.8
+  },
+  "interpretation": "LLM synthesis dominates the decision path; RAG, prompt, parse and validation are each sub-10ms; the deterministic rule path is sub-millisecond. Any end-to-end latency claim must carry the LLM term, not just the fast stages."
+}

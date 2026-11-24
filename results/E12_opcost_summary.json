@@ -1,0 +1,229 @@
+{
+  "feeder": "IEEE123",
+  "ansi_band": [
+    0.95,
+    1.05
+  ],
+  "load_multiplier_stress": 1.5,
+  "baseline": {
+    "vmin_pu": 0.9792,
+    "vmax_pu": 1.05,
+    "converged": true,
+    "solve_ms": 1.85
+  },
+  "stressed_reference_all_controls": {
+    "vmin_pu": 0.9639,
+    "vmax_pu": 1.0625,
+    "ansi_A_violations": 0,
+    "converged": true,
+    "solve_ms": 1.83
+  },
+  "false_positive_cost": {
+    "control_devices": {
+      "cap:c83": {
+        "role": "control",
+        "kind": "capacitor",
+        "isolated_vmin_pu": 0.9553,
+        "worst_drop_pu": 0.0086,
+        "new_ansi_A_violations": 0,
+        "example_violated_nodes": [],
+        "converged": true,
+        "rollback_resolve_ms": 1.36,
+        "recovery_max_dev_pu": 0.00672,
+        "recovered_within_2pct": true
+      },
+      "cap:c88a": {
+        "role": "control",
+        "kind": "capacitor",
+        "isolated_vmin_pu": 0.9577,
+        "worst_drop_pu": 0.0063,
+        "new_ansi_A_violations": 0,
+        "example_violated_nodes": [],
+        "converged": true,
+        "rollback_resolve_ms": 1.06,
+        "recovery_max_dev_pu": 1e-05,
+        "recovered_within_2pct": true
+      },
+      "cap:c90b": {
+        "role": "control",
+        "kind": "capacitor",
+        "isolated_vmin_pu": 0.966,
+        "worst_drop_pu": 0.0055,
+        "new_ansi_A_violations": 0,
+        "example_violated_nodes": [],
+        "converged": true,
+        "rollback_resolve_ms": 1.36,
+        "recovery_max_dev_pu": 0.0,
+        "recovered_within_2pct": true
+      },
+      "cap:c92c": {
+        "role": "control",
+        "kind": "capacitor",
+        "isolated_vmin_pu": 0.9643,
+        "worst_drop_pu": 0.0059,
+        "new_ansi_A_violations": 0,
+        "example_violated_nodes": [],
+        "converged": true,
+        "rollback_resolve_ms": 1.05,
+        "recovery_max_dev_pu": 1e-05,
+        "recovered_within_2pct": true
+      },
+      "reg:creg1a": {
+        "role": "control",
+        "kind": "regulator",
+        "isolated_vmin_pu": 0.8985,
+        "worst_drop_pu": 0.0658,
+        "new_ansi_A_violations": 82,
+        "example_violated_nodes": [
+          "13.1",
+          "135.1",
+          "135.3",
+          "151.1",
+          "151.3"
+        ],
+        "converged": true,
+        "rollback_resolve_ms": 2.41,
+        "recovery_max_dev_pu": 0.0,
+        "recovered_within_2pct": true
+      },
+      "reg:creg2a": {
+        "role": "control",
+        "kind": "regulator",
+        "isolated_vmin_pu": 0.9639,
+        "worst_drop_pu": 0.0,
+        "new_ansi_A_violations": 0,
+        "example_violated_nodes": [],
+        "converged": true,
+        "rollback_resolve_ms": 0.99,
+        "recovery_max_dev_pu": 0.0,
+        "recovered_within_2pct": true
+      },
+      "reg:creg3a": {
+        "role": "control",
+        "kind": "regulator",
+        "isolated_vmin_pu": 0.964,
+        "worst_drop_pu": 0.0123,
+        "new_ansi_A_violations": 0,
+        "example_violated_nodes": [],
+        "converged": true,
+        "rollback_resolve_ms": 1.19,
+        "recovery_max_dev_pu": 1e-05,
+        "recovered_within_2pct": true
+      },
+      "reg:creg3c": {
+        "role": "control",
+        "kind": "regulator",
+        "isolated_vmin_pu": 0.9639,
+        "worst_drop_pu": 0.0,
+        "new_ansi_A_violations": 0,
+        "example_violated_nodes": [],
+        "converged": true,
+        "rollback_resolve_ms": 0.96,
+        "recovery_max_dev_pu": 1e-05,
+        "recovered_within_2pct": true
+      },
+      "reg:creg4a": {
+        "role": "control",
+        "kind": "regulator",
+        "isolated_vmin_pu": 0.9414,
+        "worst_drop_pu": 0.0814,
+        "new_ansi_A_violations": 6,
+        "example_violated_nodes": [
+          "109.1",
+          "110.1",
+          "111.1",
+          "112.1",
+          "113.1"
+        ],
+        "converged": true,
+        "rollback_resolve_ms": 1.61,
+        "recovery_max_dev_pu": 0.01253,
+        "recovered_within_2pct": true
+      },
+      "reg:creg4b": {
+        "role": "control",
+        "kind": "regulator",
+        "isolated_vmin_pu": 0.9643,
+        "worst_drop_pu": 0.0205,
+        "new_ansi_A_violations": 0,
+        "example_violated_nodes": [],
+        "converged": true,
+        "rollback_resolve_ms": 1.0,
+        "recovery_max_dev_pu": 0.00684,
+        "recovered_within_2pct": true
+      },
+      "reg:creg4c": {
+        "role": "control",
+        "kind": "regulator",
+        "isolated_vmin_pu": 0.9633,
+        "worst_drop_pu": 0.0456,
+        "new_ansi_A_violations": 0,
+        "example_violated_nodes": [],
+        "converged": true,
+        "rollback_resolve_ms": 1.56,
+        "recovery_max_dev_pu": 0.00652,
+        "recovered_within_2pct": true
+      }
+    },
+    "monitor_devices": {
+      "mon:feeder_RTU_A": {
+        "role": "monitor",
+        "kind": "rtu",
+        "worst_drop_pu": 0.0,
+        "new_ansi_A_violations": 0,
+        "physical_cost": "none (no actuation)",
+        "observability_cost_device_minutes": 15,
+        "rollback_resolve_ms": 0.0,
+        "recovery_max_dev_pu": 0.0,
+        "recovered_within_2pct": true
+      },
+      "mon:bus_monitor_B": {
+        "role": "monitor",
+        "kind": "rtu",
+        "worst_drop_pu": 0.0,
+        "new_ansi_A_violations": 0,
+        "physical_cost": "none (no actuation)",
+        "observability_cost_device_minutes": 15,
+        "rollback_resolve_ms": 0.0,
+        "recovery_max_dev_pu": 0.0,
+        "recovered_within_2pct": true
+      },
+      "mon:meter_C": {
+        "role": "monitor",
+        "kind": "rtu",
+        "worst_drop_pu": 0.0,
+        "new_ansi_A_violations": 0,
+        "physical_cost": "none (no actuation)",
+        "observability_cost_device_minutes": 15,
+        "rollback_resolve_ms": 0.0,
+        "recovery_max_dev_pu": 0.0,
+        "recovered_within_2pct": true
+      }
+    }
+  },
+  "headline": {
+    "control_devices_tested": 11,
+    "control_isolations_causing_new_ANSI_violations": 2,
+    "which": [
+      "reg:creg1a",
+      "reg:creg4a"
+    ],
+    "worst_device": "reg:creg4a",
+    "worst_drop_pu": 0.0814,
+    "worst_new_violations": 6,
+    "monitor_isolations_physical_cost": 0,
+    "rollback_resolve_ms_p50": 1.19,
+    "rollback_resolve_ms_max": 2.41,
+    "all_rollbacks_recovered_within_2pct": true,
+    "worst_recovery_dev_pu": 0.01253
+  },
+  "caveats": [
+    "False-positive physical cost is role-dependent: isolating a monitor RTU costs only observability (0 physical), isolating a voltage-support device (cap/regulator) under load stress can breach ANSI A. This evidences the device-importance weighting in the problem statement.",
+    "Control isolation modeled as device/control removed from service (strongest form of the cost); a 'frozen-at-last-state' model would be a lower bound. Rollback = re-enable + physics re-converge; the SDN flow-removal itself is an O(1) OpenFlow flow-mod.",
+    "One operational number is NOT measured this session: live-ONOS failover wall-clock latency (ONOS not stood up) - the item deferred from E10; needs the testbed up.",
+    "IEEE123, single stress multiplier; magnitudes indicative of the mechanism, not a worst-case bound.",
+    "Rollback recovers the physical state to within ~1-2% pu, not bit-identically: discrete controls (regulator tap changers, switched caps) re-converge to a nearby step after the isolation clears (tap hysteresis), which is normal operational behavior.",
+    "At this stress the all-controls reference is comfortably in-band on the lower side (vmin ~0.964) but has a mild over-voltage at one regulated node (vmax ~1.0625 > 1.05), a known IEEE123 heavy-load quirk; the false-positive cost reported here is the under-voltage direction (loss of voltage support)."
+  ],
+  "elapsed_s": 0.1
+}

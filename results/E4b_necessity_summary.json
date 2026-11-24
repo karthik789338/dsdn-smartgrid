@@ -1,0 +1,1318 @@
+{
+  "summary": {
+    "experiment": "E4b_necessity_vs_serious_baselines",
+    "n_cases": 63,
+    "methods": [
+      "keyword_id",
+      "keyword_desc",
+      "regex_grammar",
+      "spacy_dep",
+      "llm::phi4-mini",
+      "llm::qwen2.5:7b"
+    ],
+    "overall": {
+      "keyword_id": {
+        "n": 63,
+        "accuracy": 0.429,
+        "false_authorize": 19,
+        "false_deny": 17
+      },
+      "keyword_desc": {
+        "n": 63,
+        "accuracy": 0.46,
+        "false_authorize": 24,
+        "false_deny": 10
+      },
+      "regex_grammar": {
+        "n": 63,
+        "accuracy": 0.825,
+        "false_authorize": 2,
+        "false_deny": 9
+      },
+      "spacy_dep": {
+        "n": 63,
+        "accuracy": 0.698,
+        "false_authorize": 12,
+        "false_deny": 7
+      },
+      "llm::phi4-mini": {
+        "n": 63,
+        "accuracy": 0.81,
+        "false_authorize": 4,
+        "false_deny": 8
+      },
+      "llm::qwen2.5:7b": {
+        "n": 63,
+        "accuracy": 0.857,
+        "false_authorize": 6,
+        "false_deny": 3
+      }
+    },
+    "per_category": {
+      "keyword_id": {
+        "compound_auth": {
+          "n": 6,
+          "accuracy": 0.167,
+          "false_authorize": 0,
+          "false_deny": 5
+        },
+        "conditional": {
+          "n": 5,
+          "accuracy": 0.0,
+          "false_authorize": 5,
+          "false_deny": 0
+        },
+        "distant_scope": {
+          "n": 3,
+          "accuracy": 0.667,
+          "false_authorize": 1,
+          "false_deny": 0
+        },
+        "double_except": {
+          "n": 2,
+          "accuracy": 0.5,
+          "false_authorize": 0,
+          "false_deny": 1
+        },
+        "implicit_neg": {
+          "n": 6,
+          "accuracy": 0.333,
+          "false_authorize": 4,
+          "false_deny": 0
+        },
+        "literal": {
+          "n": 7,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "master_trap": {
+          "n": 3,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "multi_excl_auth": {
+          "n": 4,
+          "accuracy": 0.0,
+          "false_authorize": 0,
+          "false_deny": 4
+        },
+        "multi_excl_deny": {
+          "n": 4,
+          "accuracy": 0.5,
+          "false_authorize": 2,
+          "false_deny": 0
+        },
+        "negation_trap": {
+          "n": 6,
+          "accuracy": 0.0,
+          "false_authorize": 6,
+          "false_deny": 0
+        },
+        "no_order": {
+          "n": 7,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "paraphrase": {
+          "n": 7,
+          "accuracy": 0.0,
+          "false_authorize": 0,
+          "false_deny": 7
+        },
+        "paraphrase_prohibit": {
+          "n": 3,
+          "accuracy": 0.667,
+          "false_authorize": 1,
+          "false_deny": 0
+        }
+      },
+      "keyword_desc": {
+        "compound_auth": {
+          "n": 6,
+          "accuracy": 0.5,
+          "false_authorize": 0,
+          "false_deny": 3
+        },
+        "conditional": {
+          "n": 5,
+          "accuracy": 0.0,
+          "false_authorize": 5,
+          "false_deny": 0
+        },
+        "distant_scope": {
+          "n": 3,
+          "accuracy": 0.333,
+          "false_authorize": 2,
+          "false_deny": 0
+        },
+        "double_except": {
+          "n": 2,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "implicit_neg": {
+          "n": 6,
+          "accuracy": 0.167,
+          "false_authorize": 5,
+          "false_deny": 0
+        },
+        "literal": {
+          "n": 7,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "master_trap": {
+          "n": 3,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "multi_excl_auth": {
+          "n": 4,
+          "accuracy": 0.0,
+          "false_authorize": 0,
+          "false_deny": 4
+        },
+        "multi_excl_deny": {
+          "n": 4,
+          "accuracy": 0.25,
+          "false_authorize": 3,
+          "false_deny": 0
+        },
+        "negation_trap": {
+          "n": 6,
+          "accuracy": 0.0,
+          "false_authorize": 6,
+          "false_deny": 0
+        },
+        "no_order": {
+          "n": 7,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "paraphrase": {
+          "n": 7,
+          "accuracy": 0.571,
+          "false_authorize": 0,
+          "false_deny": 3
+        },
+        "paraphrase_prohibit": {
+          "n": 3,
+          "accuracy": 0.0,
+          "false_authorize": 3,
+          "false_deny": 0
+        }
+      },
+      "regex_grammar": {
+        "compound_auth": {
+          "n": 6,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "conditional": {
+          "n": 5,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "distant_scope": {
+          "n": 3,
+          "accuracy": 0.333,
+          "false_authorize": 2,
+          "false_deny": 0
+        },
+        "double_except": {
+          "n": 2,
+          "accuracy": 0.0,
+          "false_authorize": 0,
+          "false_deny": 2
+        },
+        "implicit_neg": {
+          "n": 6,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "literal": {
+          "n": 7,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "master_trap": {
+          "n": 3,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "multi_excl_auth": {
+          "n": 4,
+          "accuracy": 0.0,
+          "false_authorize": 0,
+          "false_deny": 4
+        },
+        "multi_excl_deny": {
+          "n": 4,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "negation_trap": {
+          "n": 6,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "no_order": {
+          "n": 7,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "paraphrase": {
+          "n": 7,
+          "accuracy": 0.571,
+          "false_authorize": 0,
+          "false_deny": 3
+        },
+        "paraphrase_prohibit": {
+          "n": 3,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        }
+      },
+      "spacy_dep": {
+        "compound_auth": {
+          "n": 6,
+          "accuracy": 0.833,
+          "false_authorize": 0,
+          "false_deny": 1
+        },
+        "conditional": {
+          "n": 5,
+          "accuracy": 0.4,
+          "false_authorize": 3,
+          "false_deny": 0
+        },
+        "distant_scope": {
+          "n": 3,
+          "accuracy": 0.667,
+          "false_authorize": 1,
+          "false_deny": 0
+        },
+        "double_except": {
+          "n": 2,
+          "accuracy": 0.5,
+          "false_authorize": 0,
+          "false_deny": 1
+        },
+        "implicit_neg": {
+          "n": 6,
+          "accuracy": 0.167,
+          "false_authorize": 5,
+          "false_deny": 0
+        },
+        "literal": {
+          "n": 7,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "master_trap": {
+          "n": 3,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "multi_excl_auth": {
+          "n": 4,
+          "accuracy": 0.25,
+          "false_authorize": 0,
+          "false_deny": 3
+        },
+        "multi_excl_deny": {
+          "n": 4,
+          "accuracy": 0.75,
+          "false_authorize": 1,
+          "false_deny": 0
+        },
+        "negation_trap": {
+          "n": 6,
+          "accuracy": 0.833,
+          "false_authorize": 1,
+          "false_deny": 0
+        },
+        "no_order": {
+          "n": 7,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "paraphrase": {
+          "n": 7,
+          "accuracy": 0.714,
+          "false_authorize": 0,
+          "false_deny": 2
+        },
+        "paraphrase_prohibit": {
+          "n": 3,
+          "accuracy": 0.667,
+          "false_authorize": 1,
+          "false_deny": 0
+        }
+      },
+      "llm::phi4-mini": {
+        "compound_auth": {
+          "n": 6,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "conditional": {
+          "n": 5,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "distant_scope": {
+          "n": 3,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "double_except": {
+          "n": 2,
+          "accuracy": 0.5,
+          "false_authorize": 0,
+          "false_deny": 1
+        },
+        "implicit_neg": {
+          "n": 6,
+          "accuracy": 0.5,
+          "false_authorize": 3,
+          "false_deny": 0
+        },
+        "literal": {
+          "n": 7,
+          "accuracy": 0.714,
+          "false_authorize": 0,
+          "false_deny": 2
+        },
+        "master_trap": {
+          "n": 3,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "multi_excl_auth": {
+          "n": 4,
+          "accuracy": 0.5,
+          "false_authorize": 0,
+          "false_deny": 2
+        },
+        "multi_excl_deny": {
+          "n": 4,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "negation_trap": {
+          "n": 6,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "no_order": {
+          "n": 7,
+          "accuracy": 0.857,
+          "false_authorize": 1,
+          "false_deny": 0
+        },
+        "paraphrase": {
+          "n": 7,
+          "accuracy": 0.571,
+          "false_authorize": 0,
+          "false_deny": 3
+        },
+        "paraphrase_prohibit": {
+          "n": 3,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        }
+      },
+      "llm::qwen2.5:7b": {
+        "compound_auth": {
+          "n": 6,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "conditional": {
+          "n": 5,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "distant_scope": {
+          "n": 3,
+          "accuracy": 0.667,
+          "false_authorize": 1,
+          "false_deny": 0
+        },
+        "double_except": {
+          "n": 2,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "implicit_neg": {
+          "n": 6,
+          "accuracy": 0.833,
+          "false_authorize": 1,
+          "false_deny": 0
+        },
+        "literal": {
+          "n": 7,
+          "accuracy": 0.571,
+          "false_authorize": 0,
+          "false_deny": 3
+        },
+        "master_trap": {
+          "n": 3,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "multi_excl_auth": {
+          "n": 4,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "multi_excl_deny": {
+          "n": 4,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "negation_trap": {
+          "n": 6,
+          "accuracy": 0.833,
+          "false_authorize": 1,
+          "false_deny": 0
+        },
+        "no_order": {
+          "n": 7,
+          "accuracy": 0.571,
+          "false_authorize": 3,
+          "false_deny": 0
+        },
+        "paraphrase": {
+          "n": 7,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        },
+        "paraphrase_prohibit": {
+          "n": 3,
+          "accuracy": 1.0,
+          "false_authorize": 0,
+          "false_deny": 0
+        }
+      }
+    },
+    "hard_false_authorize": {
+      "keyword_id": {
+        "false_authorize": 13,
+        "n_hard_unauth": 26
+      },
+      "keyword_desc": {
+        "false_authorize": 18,
+        "n_hard_unauth": 26
+      },
+      "regex_grammar": {
+        "false_authorize": 2,
+        "n_hard_unauth": 26
+      },
+      "spacy_dep": {
+        "false_authorize": 11,
+        "n_hard_unauth": 26
+      },
+      "llm::phi4-mini": {
+        "false_authorize": 3,
+        "n_hard_unauth": 26
+      },
+      "llm::qwen2.5:7b": {
+        "false_authorize": 2,
+        "n_hard_unauth": 26
+      }
+    }
+  },
+  "rows": [
+    {
+      "i": 0,
+      "target": "R3",
+      "truth": "AUTHORIZED",
+      "category": "literal",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 1,
+      "target": "CB7",
+      "truth": "AUTHORIZED",
+      "category": "literal",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 2,
+      "target": "SW12",
+      "truth": "AUTHORIZED",
+      "category": "literal",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 3,
+      "target": "VR1",
+      "truth": "AUTHORIZED",
+      "category": "literal",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 4,
+      "target": "R7",
+      "truth": "AUTHORIZED",
+      "category": "literal",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 5,
+      "target": "CB2",
+      "truth": "AUTHORIZED",
+      "category": "literal",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 6,
+      "target": "SW9",
+      "truth": "AUTHORIZED",
+      "category": "literal",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 7,
+      "target": "R3",
+      "truth": "AUTHORIZED",
+      "category": "paraphrase",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 8,
+      "target": "CB7",
+      "truth": "AUTHORIZED",
+      "category": "paraphrase",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 9,
+      "target": "VR1",
+      "truth": "AUTHORIZED",
+      "category": "paraphrase",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 10,
+      "target": "CB2",
+      "truth": "AUTHORIZED",
+      "category": "paraphrase",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 11,
+      "target": "R7",
+      "truth": "AUTHORIZED",
+      "category": "paraphrase",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 12,
+      "target": "SW9",
+      "truth": "AUTHORIZED",
+      "category": "paraphrase",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 13,
+      "target": "SW12",
+      "truth": "AUTHORIZED",
+      "category": "paraphrase",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 14,
+      "target": "CB7",
+      "truth": "UNAUTHORIZED",
+      "category": "no_order",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 15,
+      "target": "SW9",
+      "truth": "UNAUTHORIZED",
+      "category": "no_order",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 16,
+      "target": "CB7",
+      "truth": "UNAUTHORIZED",
+      "category": "no_order",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 17,
+      "target": "SW12",
+      "truth": "UNAUTHORIZED",
+      "category": "no_order",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 18,
+      "target": "R7",
+      "truth": "UNAUTHORIZED",
+      "category": "no_order",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 19,
+      "target": "R3",
+      "truth": "UNAUTHORIZED",
+      "category": "no_order",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 20,
+      "target": "M",
+      "truth": "UNAUTHORIZED",
+      "category": "no_order",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 21,
+      "target": "CB7",
+      "truth": "UNAUTHORIZED",
+      "category": "negation_trap",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 22,
+      "target": "SW9",
+      "truth": "UNAUTHORIZED",
+      "category": "negation_trap",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 23,
+      "target": "VR1",
+      "truth": "UNAUTHORIZED",
+      "category": "negation_trap",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 24,
+      "target": "R3",
+      "truth": "UNAUTHORIZED",
+      "category": "negation_trap",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 25,
+      "target": "SW12",
+      "truth": "UNAUTHORIZED",
+      "category": "negation_trap",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 26,
+      "target": "R7",
+      "truth": "UNAUTHORIZED",
+      "category": "negation_trap",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 27,
+      "target": "R7",
+      "truth": "UNAUTHORIZED",
+      "category": "implicit_neg",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 28,
+      "target": "VR1",
+      "truth": "UNAUTHORIZED",
+      "category": "implicit_neg",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 29,
+      "target": "SW9",
+      "truth": "UNAUTHORIZED",
+      "category": "implicit_neg",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 30,
+      "target": "CB2",
+      "truth": "UNAUTHORIZED",
+      "category": "implicit_neg",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 31,
+      "target": "CB7",
+      "truth": "UNAUTHORIZED",
+      "category": "implicit_neg",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 32,
+      "target": "VR1",
+      "truth": "UNAUTHORIZED",
+      "category": "implicit_neg",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 33,
+      "target": "SW12",
+      "truth": "UNAUTHORIZED",
+      "category": "conditional",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 34,
+      "target": "CB7",
+      "truth": "UNAUTHORIZED",
+      "category": "conditional",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 35,
+      "target": "R3",
+      "truth": "UNAUTHORIZED",
+      "category": "conditional",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 36,
+      "target": "SW9",
+      "truth": "UNAUTHORIZED",
+      "category": "conditional",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 37,
+      "target": "VR1",
+      "truth": "UNAUTHORIZED",
+      "category": "conditional",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 38,
+      "target": "CB7",
+      "truth": "UNAUTHORIZED",
+      "category": "multi_excl_deny",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 39,
+      "target": "SW12",
+      "truth": "UNAUTHORIZED",
+      "category": "multi_excl_deny",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 40,
+      "target": "R7",
+      "truth": "UNAUTHORIZED",
+      "category": "multi_excl_deny",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 41,
+      "target": "CB2",
+      "truth": "UNAUTHORIZED",
+      "category": "multi_excl_deny",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 42,
+      "target": "R3",
+      "truth": "AUTHORIZED",
+      "category": "multi_excl_auth",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 43,
+      "target": "R3",
+      "truth": "AUTHORIZED",
+      "category": "multi_excl_auth",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 44,
+      "target": "CB7",
+      "truth": "AUTHORIZED",
+      "category": "multi_excl_auth",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 45,
+      "target": "SW9",
+      "truth": "AUTHORIZED",
+      "category": "multi_excl_auth",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 46,
+      "target": "VR1",
+      "truth": "UNAUTHORIZED",
+      "category": "distant_scope",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 47,
+      "target": "R7",
+      "truth": "UNAUTHORIZED",
+      "category": "distant_scope",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 48,
+      "target": "CB7",
+      "truth": "UNAUTHORIZED",
+      "category": "distant_scope",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 49,
+      "target": "CB2",
+      "truth": "UNAUTHORIZED",
+      "category": "paraphrase_prohibit",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 50,
+      "target": "SW9",
+      "truth": "UNAUTHORIZED",
+      "category": "paraphrase_prohibit",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 51,
+      "target": "R3",
+      "truth": "UNAUTHORIZED",
+      "category": "paraphrase_prohibit",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 52,
+      "target": "M",
+      "truth": "UNAUTHORIZED",
+      "category": "master_trap",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 53,
+      "target": "M",
+      "truth": "UNAUTHORIZED",
+      "category": "master_trap",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 54,
+      "target": "M",
+      "truth": "UNAUTHORIZED",
+      "category": "master_trap",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "UNAUTHORIZED"
+    },
+    {
+      "i": 55,
+      "target": "R3",
+      "truth": "AUTHORIZED",
+      "category": "compound_auth",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 56,
+      "target": "CB7",
+      "truth": "AUTHORIZED",
+      "category": "compound_auth",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 57,
+      "target": "SW12",
+      "truth": "AUTHORIZED",
+      "category": "compound_auth",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 58,
+      "target": "SW9",
+      "truth": "AUTHORIZED",
+      "category": "compound_auth",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 59,
+      "target": "VR1",
+      "truth": "AUTHORIZED",
+      "category": "compound_auth",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "UNAUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 60,
+      "target": "R7",
+      "truth": "AUTHORIZED",
+      "category": "compound_auth",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "AUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 61,
+      "target": "CB7",
+      "truth": "AUTHORIZED",
+      "category": "double_except",
+      "keyword_id": "UNAUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "AUTHORIZED",
+      "llm::phi4-mini": "AUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    },
+    {
+      "i": 62,
+      "target": "R3",
+      "truth": "AUTHORIZED",
+      "category": "double_except",
+      "keyword_id": "AUTHORIZED",
+      "keyword_desc": "AUTHORIZED",
+      "regex_grammar": "UNAUTHORIZED",
+      "spacy_dep": "UNAUTHORIZED",
+      "llm::phi4-mini": "UNAUTHORIZED",
+      "llm::qwen2.5:7b": "AUTHORIZED"
+    }
+  ]
+}

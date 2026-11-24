@@ -1,0 +1,70 @@
+{
+  "runs": 5,
+  "results": [
+    {
+      "feeder": "IEEE13",
+      "mode": "authorized_safe_expected",
+      "requested_load_mult": 1.02,
+      "command_authorized": true,
+      "dnp3_connected": null,
+      "dnp3_delivered": false,
+      "dnp3_status_readback": null,
+      "max_node_dv_pu": null,
+      "applied_safety_ok": null,
+      "rollback_max_dv_pu": null,
+      "outcome": "dnp3_not_delivered"
+    },
+    {
+      "feeder": "IEEE34",
+      "mode": "authorized_physics_reject_expected",
+      "requested_load_mult": 1.02,
+      "command_authorized": true,
+      "dnp3_connected": null,
+      "dnp3_delivered": false,
+      "dnp3_status_readback": null,
+      "max_node_dv_pu": null,
+      "applied_safety_ok": null,
+      "rollback_max_dv_pu": null,
+      "outcome": "dnp3_not_delivered"
+    },
+    {
+      "feeder": "IEEE123",
+      "mode": "authorized_safe_expected",
+      "requested_load_mult": 1.02,
+      "command_authorized": true,
+      "dnp3_connected": null,
+      "dnp3_delivered": false,
+      "dnp3_status_readback": null,
+      "max_node_dv_pu": null,
+      "applied_safety_ok": null,
+      "rollback_max_dv_pu": null,
+      "outcome": "dnp3_not_delivered"
+    },
+    {
+      "feeder": "IEEE13",
+      "mode": "over_range_refused_expected",
+      "requested_load_mult": 1.1,
+      "command_authorized": false,
+      "dnp3_connected": null,
+      "dnp3_delivered": false,
+      "dnp3_status_readback": null,
+      "max_node_dv_pu": null,
+      "applied_safety_ok": null,
+      "rollback_max_dv_pu": null,
+      "outcome": "dnp3_not_delivered"
+    },
+    {
+      "feeder": "IEEE13",
+      "mode": "stale_envelope_reject_expected",
+      "requested_load_mult": 1.02,
+      "command_authorized": true,
+      "dnp3_connected": null,
+      "dnp3_delivered": false,
+      "dnp3_status_readback": null,
+      "max_node_dv_pu": null,
+      "applied_safety_ok": null,
+      "rollback_max_dv_pu": null,
+      "outcome": "dnp3_not_delivered"
+    }
+  ]
+}

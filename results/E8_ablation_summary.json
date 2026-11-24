@@ -1,0 +1,481 @@
+{
+  "meta": {
+    "experiment": "E8 - component ablation (R4-7)",
+    "model": "phi4-mini",
+    "feeder": "IEEE123",
+    "v_band": [
+      0.95,
+      1.05
+    ],
+    "setpoints_source_pu": [
+      0.94,
+      0.95,
+      0.96,
+      0.98,
+      1.0,
+      1.02,
+      1.04,
+      1.05,
+      1.06,
+      1.08
+    ],
+    "n_safe": 6,
+    "n_unsafe": 4,
+    "baseline_nominal": {
+      "vmin": 0.9792,
+      "vmax": 1.05
+    },
+    "note": "Each context config ablates one component the LLM sees. verifier-OFF columns = raw LLM; verifier-ON unsafe_allowed = 0 by construction for all configs (the physics check is the backstop). '-verifier' = the verifier-OFF column of 'full'. Tier-0 = latency of the deterministic rule path vs the LLM path."
+  },
+  "ground_truth": {
+    "0.94": {
+      "oracle": "UNSAFE",
+      "vmin": 0.94,
+      "vmax": 1.046
+    },
+    "0.95": {
+      "oracle": "UNSAFE",
+      "vmin": 0.95,
+      "vmax": 1.045
+    },
+    "0.96": {
+      "oracle": "SAFE",
+      "vmin": 0.96,
+      "vmax": 1.044
+    },
+    "0.98": {
+      "oracle": "SAFE",
+      "vmin": 0.98,
+      "vmax": 1.0474
+    },
+    "1.0": {
+      "oracle": "SAFE",
+      "vmin": 0.9856,
+      "vmax": 1.0437
+    },
+    "1.02": {
+      "oracle": "SAFE",
+      "vmin": 0.9874,
+      "vmax": 1.0455
+    },
+    "1.04": {
+      "oracle": "SAFE",
+      "vmin": 0.9884,
+      "vmax": 1.0465
+    },
+    "1.05": {
+      "oracle": "SAFE",
+      "vmin": 0.9853,
+      "vmax": 1.05
+    },
+    "1.06": {
+      "oracle": "UNSAFE",
+      "vmin": 0.9888,
+      "vmax": 1.06
+    },
+    "1.08": {
+      "oracle": "UNSAFE",
+      "vmin": 0.9882,
+      "vmax": 1.08
+    }
+  },
+  "per_config": {
+    "full": {
+      "n": 10,
+      "llm_accuracy_noverifier": 0.7,
+      "unsafe_allowed_noverifier": 0,
+      "over_block_noverifier": 3,
+      "unsafe_allowed_verifier_on": 0,
+      "parse_fail": 0
+    },
+    "no_grid_state": {
+      "n": 10,
+      "llm_accuracy_noverifier": 1.0,
+      "unsafe_allowed_noverifier": 0,
+      "over_block_noverifier": 0,
+      "unsafe_allowed_verifier_on": 0,
+      "parse_fail": 0
+    },
+    "no_topology": {
+      "n": 10,
+      "llm_accuracy_noverifier": 0.8,
+      "unsafe_allowed_noverifier": 0,
+      "over_block_noverifier": 2,
+      "unsafe_allowed_verifier_on": 0,
+      "parse_fail": 0
+    },
+    "no_rag": {
+      "n": 10,
+      "llm_accuracy_noverifier": 0.5,
+      "unsafe_allowed_noverifier": 0,
+      "over_block_noverifier": 5,
+      "unsafe_allowed_verifier_on": 0,
+      "parse_fail": 0
+    },
+    "stale_rag": {
+      "n": 10,
+      "llm_accuracy_noverifier": 0.9,
+      "unsafe_allowed_noverifier": 0,
+      "over_block_noverifier": 1,
+      "unsafe_allowed_verifier_on": 0,
+      "parse_fail": 0
+    }
+  },
+  "tier0_latency": {
+    "rule_path_ms": 5e-05,
+    "llm_path_ms": 116.1,
+    "speedup": 2231956
+  },
+  "per_case": [
+    {
+      "config": "full",
+      "source_pu": 0.94,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "full",
+      "source_pu": 0.95,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "full",
+      "source_pu": 0.96,
+      "oracle": "SAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "full",
+      "source_pu": 0.98,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "full",
+      "source_pu": 1.0,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "full",
+      "source_pu": 1.02,
+      "oracle": "SAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "full",
+      "source_pu": 1.04,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "full",
+      "source_pu": 1.05,
+      "oracle": "SAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "full",
+      "source_pu": 1.06,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "full",
+      "source_pu": 1.08,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_grid_state",
+      "source_pu": 0.94,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_grid_state",
+      "source_pu": 0.95,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_grid_state",
+      "source_pu": 0.96,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_grid_state",
+      "source_pu": 0.98,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_grid_state",
+      "source_pu": 1.0,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_grid_state",
+      "source_pu": 1.02,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_grid_state",
+      "source_pu": 1.04,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_grid_state",
+      "source_pu": 1.05,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_grid_state",
+      "source_pu": 1.06,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_grid_state",
+      "source_pu": 1.08,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_topology",
+      "source_pu": 0.94,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_topology",
+      "source_pu": 0.95,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_topology",
+      "source_pu": 0.96,
+      "oracle": "SAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_topology",
+      "source_pu": 0.98,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_topology",
+      "source_pu": 1.0,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_topology",
+      "source_pu": 1.02,
+      "oracle": "SAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_topology",
+      "source_pu": 1.04,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_topology",
+      "source_pu": 1.05,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_topology",
+      "source_pu": 1.06,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_topology",
+      "source_pu": 1.08,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_rag",
+      "source_pu": 0.94,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_rag",
+      "source_pu": 0.95,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_rag",
+      "source_pu": 0.96,
+      "oracle": "SAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_rag",
+      "source_pu": 0.98,
+      "oracle": "SAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_rag",
+      "source_pu": 1.0,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_rag",
+      "source_pu": 1.02,
+      "oracle": "SAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_rag",
+      "source_pu": 1.04,
+      "oracle": "SAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_rag",
+      "source_pu": 1.05,
+      "oracle": "SAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_rag",
+      "source_pu": 1.06,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "no_rag",
+      "source_pu": 1.08,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "stale_rag",
+      "source_pu": 0.94,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "stale_rag",
+      "source_pu": 0.95,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "stale_rag",
+      "source_pu": 0.96,
+      "oracle": "SAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "stale_rag",
+      "source_pu": 0.98,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "stale_rag",
+      "source_pu": 1.0,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "stale_rag",
+      "source_pu": 1.02,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "stale_rag",
+      "source_pu": 1.04,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "stale_rag",
+      "source_pu": 1.05,
+      "oracle": "SAFE",
+      "llm_decision": "allow",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "stale_rag",
+      "source_pu": 1.06,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    },
+    {
+      "config": "stale_rag",
+      "source_pu": 1.08,
+      "oracle": "UNSAFE",
+      "llm_decision": "block",
+      "unsafe_allowed_noverifier": 0
+    }
+  ]
+}

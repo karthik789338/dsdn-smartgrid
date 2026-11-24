@@ -1,0 +1,127 @@
+{
+  "protocol": "position-bias-controlled pairwise, faithful vs degraded",
+  "n_decisions": 8,
+  "defect_types": [
+    "wrong_action_target",
+    "physics_contradict",
+    "vacuous",
+    "mismatched"
+  ],
+  "judges": [
+    "phi4-mini",
+    "qwen2.5:7b",
+    "llama3.2:3b",
+    "gemma3:4b"
+  ],
+  "orders_per_pair": 2,
+  "total_llm_calls": 256,
+  "per_judge": {
+    "phi4-mini": {
+      "wrong_action_target": {
+        "robust_acc": 1.0,
+        "raw_acc": 1.0,
+        "position_bias_rate": 0.0
+      },
+      "physics_contradict": {
+        "robust_acc": 1.0,
+        "raw_acc": 1.0,
+        "position_bias_rate": 0.0
+      },
+      "vacuous": {
+        "robust_acc": 1.0,
+        "raw_acc": 1.0,
+        "position_bias_rate": 0.0
+      },
+      "mismatched": {
+        "robust_acc": 1.0,
+        "raw_acc": 1.0,
+        "position_bias_rate": 0.0
+      },
+      "OVERALL_robust_acc": 1.0
+    },
+    "qwen2.5:7b": {
+      "wrong_action_target": {
+        "robust_acc": 1.0,
+        "raw_acc": 1.0,
+        "position_bias_rate": 0.0
+      },
+      "physics_contradict": {
+        "robust_acc": 0.75,
+        "raw_acc": 0.875,
+        "position_bias_rate": 0.25
+      },
+      "vacuous": {
+        "robust_acc": 1.0,
+        "raw_acc": 1.0,
+        "position_bias_rate": 0.0
+      },
+      "mismatched": {
+        "robust_acc": 1.0,
+        "raw_acc": 1.0,
+        "position_bias_rate": 0.0
+      },
+      "OVERALL_robust_acc": 0.938
+    },
+    "llama3.2:3b": {
+      "wrong_action_target": {
+        "robust_acc": 1.0,
+        "raw_acc": 1.0,
+        "position_bias_rate": 0.0
+      },
+      "physics_contradict": {
+        "robust_acc": 0.25,
+        "raw_acc": 0.625,
+        "position_bias_rate": 0.75
+      },
+      "vacuous": {
+        "robust_acc": 0.875,
+        "raw_acc": 0.938,
+        "position_bias_rate": 0.125
+      },
+      "mismatched": {
+        "robust_acc": 0.75,
+        "raw_acc": 0.875,
+        "position_bias_rate": 0.25
+      },
+      "OVERALL_robust_acc": 0.719
+    },
+    "gemma3:4b": {
+      "wrong_action_target": {
+        "robust_acc": 0.75,
+        "raw_acc": 0.875,
+        "position_bias_rate": 0.25
+      },
+      "physics_contradict": {
+        "robust_acc": 0.125,
+        "raw_acc": 0.562,
+        "position_bias_rate": 0.875
+      },
+      "vacuous": {
+        "robust_acc": 1.0,
+        "raw_acc": 1.0,
+        "position_bias_rate": 0.0
+      },
+      "mismatched": {
+        "robust_acc": 0.625,
+        "raw_acc": 0.75,
+        "position_bias_rate": 0.25
+      },
+      "OVERALL_robust_acc": 0.625
+    }
+  },
+  "ensemble": {
+    "wrong_action_target": 1.0,
+    "physics_contradict": 0.25,
+    "vacuous": 1.0,
+    "mismatched": 0.75,
+    "OVERALL": 0.75
+  },
+  "cross_judge_agreement": 0.781,
+  "elapsed_s": 988.5,
+  "caveats": [
+    "Faithful explanations are ground-truth-correct by construction; defects are controlled single-factor corruptions, so 'faithful should win' is an objective label, not a human-preference proxy.",
+    "Pairwise (A-vs-B) with both orders controls position bias; robust_acc credits a judge only when it picks faithful in BOTH orders.",
+    "4 open-weight judges (3.8B-7B) on Ollama; larger proprietary judges may score higher. The claim is about reliability/discrimination and its envelope, not a ceiling.",
+    "8 decisions x 4 defects; magnitudes indicative. The safety gate remains the deterministic validator - the judge is a reporting aid whose trustworthy envelope this phase measures."
+  ]
+}

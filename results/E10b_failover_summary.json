@@ -1,0 +1,86 @@
+{
+  "device": "of:0000a2c10641aa48",
+  "config": "single OVS switch multi-homed to all 3 ONOS controllers (tcp:172.20.0.5/6/7:6653)",
+  "n_trials": 7,
+  "trials": [
+    {
+      "trial": 0,
+      "killed": "onos-3",
+      "killed_ip": "172.20.0.7",
+      "new_master": "172.20.0.6",
+      "failover_s": 3.319,
+      "device_available_after": true,
+      "device_stayed_available": true
+    },
+    {
+      "trial": 1,
+      "killed": "onos-2",
+      "killed_ip": "172.20.0.6",
+      "new_master": "172.20.0.5",
+      "failover_s": 3.416,
+      "device_available_after": true,
+      "device_stayed_available": true
+    },
+    {
+      "trial": 2,
+      "killed": "onos-1",
+      "killed_ip": "172.20.0.5",
+      "new_master": "172.20.0.7",
+      "failover_s": 1.974,
+      "device_available_after": true,
+      "device_stayed_available": true
+    },
+    {
+      "trial": 3,
+      "killed": "onos-3",
+      "killed_ip": "172.20.0.7",
+      "new_master": "172.20.0.6",
+      "failover_s": 1.882,
+      "device_available_after": true,
+      "device_stayed_available": true
+    },
+    {
+      "trial": 4,
+      "killed": "onos-2",
+      "killed_ip": "172.20.0.6",
+      "new_master": "172.20.0.5",
+      "failover_s": 3.499,
+      "device_available_after": true,
+      "device_stayed_available": true
+    },
+    {
+      "trial": 5,
+      "killed": "onos-1",
+      "killed_ip": "172.20.0.5",
+      "new_master": "172.20.0.7",
+      "failover_s": 2.421,
+      "device_available_after": true,
+      "device_stayed_available": true
+    },
+    {
+      "trial": 6,
+      "killed": "onos-3",
+      "killed_ip": "172.20.0.7",
+      "new_master": "172.20.0.6",
+      "failover_s": 2.48,
+      "device_available_after": true,
+      "device_stayed_available": true
+    }
+  ],
+  "failover_s": {
+    "n": 7,
+    "p50": 2.48,
+    "mean": 2.713,
+    "min": 1.882,
+    "max": 3.499
+  },
+  "device_stayed_available_all_trials": true,
+  "method": "docker kill (SIGKILL) the current ONOS master; poll REST device-mastership on a surviving node until mastership moves to a live node; restart killed node and wait for 3-node READY between trials",
+  "cluster": "3x ONOS 2.2.1 + 3x Atomix 3.1.5 (live pilot cluster)",
+  "caveats": [
+    "CONTROL-plane mastership failover: time from SIGKILL of the master to a surviving controller taking mastership of a multi-homed switch; bounded by the Atomix failure-detection/term timeout.",
+    "Requires the switch to be multi-homed (connected to all 3 controllers). The pilot fabric shards each switch to ONE controller, which gives NO OF-layer failover (killing that controller disconnects the switch); the resilient design multi-homes, which is what is measured here.",
+    "Data-plane forwarding from already-installed flow rules persists through the window (OpenFlow fail-static, E10); device_stayed_available confirms the switch never lost connectivity (still attached to 2 survivors).",
+    "Single switch, single EC2 host, container-local cluster; wall-clock indicative, not a datacenter-grade bound."
+  ]
+}

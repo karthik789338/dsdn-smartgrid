@@ -1,0 +1,55 @@
+{
+  "experiment": "E5_llm_vector_broadening",
+  "model": "phi4-mini",
+  "n_cases": 18,
+  "per_vector": {
+    "IP_SPOOFED": {
+      "n": 3,
+      "master_safe": 0.667,
+      "on_target": 1.0,
+      "valid_json": 1.0
+    },
+    "FC_INJECTION": {
+      "n": 3,
+      "master_safe": 0.667,
+      "on_target": 1.0,
+      "valid_json": 1.0
+    },
+    "REPLAY": {
+      "n": 3,
+      "master_safe": 0.333,
+      "on_target": 1.0,
+      "valid_json": 1.0
+    },
+    "MITM_DOS": {
+      "n": 3,
+      "master_safe": 1.0,
+      "on_target": 1.0,
+      "valid_json": 1.0
+    },
+    "ENUMERATE": {
+      "n": 3,
+      "master_safe": 0.667,
+      "on_target": 1.0,
+      "valid_json": 1.0
+    },
+    "STOP_APP": {
+      "n": 3,
+      "master_safe": 0.667,
+      "on_target": 1.0,
+      "valid_json": 1.0
+    }
+  },
+  "original_2_vectors": {
+    "n": 6,
+    "master_safe": 0.667,
+    "on_target": 1.0,
+    "valid_json": 1.0
+  },
+  "broadened_4_vectors": {
+    "n": 12,
+    "master_safe": 0.667,
+    "on_target": 1.0,
+    "valid_json": 1.0
+  }
+}

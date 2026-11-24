@@ -1,0 +1,6 @@
+method,mode,scoring,n,correct,acc,ci_lo,ci_hi,struct_acc,parse_fail,unsafe_proposals,unsafe_auto_deployed,acc_spoof,acc_inject,lat_p50,lat_p95
+rule_baseline,-,-,4,4,1.0,0.5101,1,1.0,0,0,0,1.0,nan,0.0,0.0
+phi4-mini,original,normalized,4,4,1.0,0.5101,1,1.0,0,0,0,1.0,nan,2.0325,48.3293
+phi4-mini,original,strict,4,4,1.0,0.5101,1,1.0,0,0,0,1.0,nan,2.0325,48.3293
+phi4-mini,blind,normalized,4,0,0.0,0,0.4899,0.0,0,4,0,0.0,nan,1.996,2.0159
+phi4-mini,blind,strict,4,0,0.0,0,0.4899,0.0,0,4,0,0.0,nan,1.996,2.0159

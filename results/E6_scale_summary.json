@@ -1,0 +1,676 @@
+{
+  "meta": {
+    "experiment": "E6 - verifier cost + necessity at scale",
+    "opendssdirect": "0.9.4",
+    "command": "substation source voltage setpoint (pu)",
+    "v_band": [
+      0.95,
+      1.05
+    ],
+    "rule_band_source_pu": [
+      1.0,
+      1.05
+    ],
+    "source_pu_sweep": [
+      0.94,
+      0.95,
+      0.96,
+      0.97,
+      0.98,
+      0.99,
+      1.0,
+      1.01,
+      1.02,
+      1.03,
+      1.04,
+      1.05,
+      1.06,
+      1.07,
+      1.08,
+      1.09,
+      1.1
+    ],
+    "note": "Part A: per-decision verify latency (apply changed source setpoint -> solve with control iterations -> read) vs feeder size. Part B: oracle (ANSI A) vs physics-blind fixed rule vs consequence-aware verifier over the setpoint sweep. unsafe_allowed = ALLOW on oracle-BLOCK; over_block = BLOCK on oracle-SAFE."
+  },
+  "feeders": {
+    "IEEE13": {
+      "nodes": 41,
+      "compile_ms": 2.0,
+      "verify_cycle_ms": {
+        "n": 40,
+        "mean": 0.144,
+        "p50": 0.131,
+        "p95": 0.238,
+        "p99": 0.24,
+        "min": 0.079,
+        "max": 0.24
+      },
+      "n_scenarios": 17,
+      "n_safe": 0,
+      "n_unsafe": 17,
+      "safe_source_pu_window": null,
+      "unsafe_allowed_rule": 6,
+      "over_block_rule": 0,
+      "unsafe_allowed_verifier": 0,
+      "over_block_verifier": 0,
+      "rows": [
+        {
+          "source_pu": 0.94,
+          "vmin": 0.9369,
+          "vmax": 1.0396,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 0.95,
+          "vmin": 0.9478,
+          "vmax": 1.051,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 0.96,
+          "vmin": 0.9598,
+          "vmax": 1.0558,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 0.97,
+          "vmin": 0.9698,
+          "vmax": 1.0667,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 0.98,
+          "vmin": 0.9715,
+          "vmax": 1.0654,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 0.99,
+          "vmin": 0.9698,
+          "vmax": 1.0639,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.0,
+          "vmin": 0.9749,
+          "vmax": 1.0684,
+          "oracle": "UNSAFE",
+          "rule": "ALLOW",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.01,
+          "vmin": 0.9727,
+          "vmax": 1.0665,
+          "oracle": "UNSAFE",
+          "rule": "ALLOW",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.02,
+          "vmin": 0.9702,
+          "vmax": 1.0643,
+          "oracle": "UNSAFE",
+          "rule": "ALLOW",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.03,
+          "vmin": 0.9748,
+          "vmax": 1.0683,
+          "oracle": "UNSAFE",
+          "rule": "ALLOW",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.04,
+          "vmin": 0.9718,
+          "vmax": 1.0657,
+          "oracle": "UNSAFE",
+          "rule": "ALLOW",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.05,
+          "vmin": 0.9759,
+          "vmax": 1.0694,
+          "oracle": "UNSAFE",
+          "rule": "ALLOW",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.06,
+          "vmin": 0.9725,
+          "vmax": 1.0664,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.07,
+          "vmin": 0.9688,
+          "vmax": 1.0699,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.08,
+          "vmin": 0.9724,
+          "vmax": 1.0799,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.09,
+          "vmin": 0.9758,
+          "vmax": 1.0899,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.1,
+          "vmin": 0.9714,
+          "vmax": 1.0999,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        }
+      ]
+    },
+    "IEEE34": {
+      "nodes": 95,
+      "compile_ms": 2.4,
+      "verify_cycle_ms": {
+        "n": 40,
+        "mean": 0.471,
+        "p50": 0.483,
+        "p95": 0.638,
+        "p99": 0.669,
+        "min": 0.345,
+        "max": 0.669
+      },
+      "n_scenarios": 17,
+      "n_safe": 0,
+      "n_unsafe": 17,
+      "safe_source_pu_window": null,
+      "unsafe_allowed_rule": 6,
+      "over_block_rule": 0,
+      "unsafe_allowed_verifier": 0,
+      "over_block_verifier": 0,
+      "rows": [
+        {
+          "source_pu": 0.94,
+          "vmin": 0.8224,
+          "vmax": 0.9961,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 0.95,
+          "vmin": 0.8343,
+          "vmax": 1.0079,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 0.96,
+          "vmin": 0.8468,
+          "vmax": 1.02,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 0.97,
+          "vmin": 0.8593,
+          "vmax": 1.032,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 0.98,
+          "vmin": 0.8717,
+          "vmax": 1.0442,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 0.99,
+          "vmin": 0.8829,
+          "vmax": 1.0471,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.0,
+          "vmin": 0.893,
+          "vmax": 1.0495,
+          "oracle": "UNSAFE",
+          "rule": "ALLOW",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.01,
+          "vmin": 0.9029,
+          "vmax": 1.0402,
+          "oracle": "UNSAFE",
+          "rule": "ALLOW",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.02,
+          "vmin": 0.9133,
+          "vmax": 1.0398,
+          "oracle": "UNSAFE",
+          "rule": "ALLOW",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.03,
+          "vmin": 0.9157,
+          "vmax": 1.0452,
+          "oracle": "UNSAFE",
+          "rule": "ALLOW",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.04,
+          "vmin": 0.9205,
+          "vmax": 1.0476,
+          "oracle": "UNSAFE",
+          "rule": "ALLOW",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.05,
+          "vmin": 0.9196,
+          "vmax": 1.05,
+          "oracle": "UNSAFE",
+          "rule": "ALLOW",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.06,
+          "vmin": 0.9184,
+          "vmax": 1.06,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.07,
+          "vmin": 0.9146,
+          "vmax": 1.07,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.08,
+          "vmin": 0.9146,
+          "vmax": 1.08,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.09,
+          "vmin": 0.919,
+          "vmax": 1.09,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.1,
+          "vmin": 0.917,
+          "vmax": 1.1,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        }
+      ]
+    },
+    "IEEE123": {
+      "nodes": 278,
+      "compile_ms": 3.8,
+      "verify_cycle_ms": {
+        "n": 40,
+        "mean": 1.041,
+        "p50": 1.132,
+        "p95": 1.429,
+        "p99": 1.45,
+        "min": 0.581,
+        "max": 1.45
+      },
+      "n_scenarios": 17,
+      "n_safe": 10,
+      "n_unsafe": 7,
+      "safe_source_pu_window": [
+        0.96,
+        1.05
+      ],
+      "unsafe_allowed_rule": 0,
+      "over_block_rule": 4,
+      "unsafe_allowed_verifier": 0,
+      "over_block_verifier": 0,
+      "rows": [
+        {
+          "source_pu": 0.94,
+          "vmin": 0.94,
+          "vmax": 1.046,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 0.95,
+          "vmin": 0.95,
+          "vmax": 1.045,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 0.96,
+          "vmin": 0.96,
+          "vmax": 1.044,
+          "oracle": "SAFE",
+          "rule": "BLOCK",
+          "verifier": "ALLOW"
+        },
+        {
+          "source_pu": 0.97,
+          "vmin": 0.97,
+          "vmax": 1.0427,
+          "oracle": "SAFE",
+          "rule": "BLOCK",
+          "verifier": "ALLOW"
+        },
+        {
+          "source_pu": 0.98,
+          "vmin": 0.98,
+          "vmax": 1.0474,
+          "oracle": "SAFE",
+          "rule": "BLOCK",
+          "verifier": "ALLOW"
+        },
+        {
+          "source_pu": 0.99,
+          "vmin": 0.9876,
+          "vmax": 1.0457,
+          "oracle": "SAFE",
+          "rule": "BLOCK",
+          "verifier": "ALLOW"
+        },
+        {
+          "source_pu": 1.0,
+          "vmin": 0.9856,
+          "vmax": 1.0437,
+          "oracle": "SAFE",
+          "rule": "ALLOW",
+          "verifier": "ALLOW"
+        },
+        {
+          "source_pu": 1.01,
+          "vmin": 0.9899,
+          "vmax": 1.0479,
+          "oracle": "SAFE",
+          "rule": "ALLOW",
+          "verifier": "ALLOW"
+        },
+        {
+          "source_pu": 1.02,
+          "vmin": 0.9874,
+          "vmax": 1.0455,
+          "oracle": "SAFE",
+          "rule": "ALLOW",
+          "verifier": "ALLOW"
+        },
+        {
+          "source_pu": 1.03,
+          "vmin": 0.9847,
+          "vmax": 1.0429,
+          "oracle": "SAFE",
+          "rule": "ALLOW",
+          "verifier": "ALLOW"
+        },
+        {
+          "source_pu": 1.04,
+          "vmin": 0.9885,
+          "vmax": 1.0465,
+          "oracle": "SAFE",
+          "rule": "ALLOW",
+          "verifier": "ALLOW"
+        },
+        {
+          "source_pu": 1.05,
+          "vmin": 0.9853,
+          "vmax": 1.05,
+          "oracle": "SAFE",
+          "rule": "ALLOW",
+          "verifier": "ALLOW"
+        },
+        {
+          "source_pu": 1.06,
+          "vmin": 0.9888,
+          "vmax": 1.06,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.07,
+          "vmin": 0.9851,
+          "vmax": 1.07,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.08,
+          "vmin": 0.9882,
+          "vmax": 1.08,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.09,
+          "vmin": 0.9841,
+          "vmax": 1.09,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.1,
+          "vmin": 0.9869,
+          "vmax": 1.1,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        }
+      ]
+    },
+    "IEEE8500": {
+      "nodes": 8531,
+      "compile_ms": 118.0,
+      "verify_cycle_ms": {
+        "n": 25,
+        "mean": 65.465,
+        "p50": 55.687,
+        "p95": 101.504,
+        "p99": 112.559,
+        "min": 42.159,
+        "max": 112.559
+      },
+      "n_scenarios": 17,
+      "n_safe": 0,
+      "n_unsafe": 17,
+      "safe_source_pu_window": null,
+      "unsafe_allowed_rule": 6,
+      "over_block_rule": 0,
+      "unsafe_allowed_verifier": 0,
+      "over_block_verifier": 0,
+      "rows": [
+        {
+          "source_pu": 0.94,
+          "vmin": 0.8662,
+          "vmax": 1.0504,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 0.95,
+          "vmin": 0.8858,
+          "vmax": 1.0496,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 0.96,
+          "vmin": 0.9072,
+          "vmax": 1.052,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 0.97,
+          "vmin": 0.9252,
+          "vmax": 1.0597,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 0.98,
+          "vmin": 0.9323,
+          "vmax": 1.061,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 0.99,
+          "vmin": 0.9406,
+          "vmax": 1.0611,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.0,
+          "vmin": 0.9399,
+          "vmax": 1.0619,
+          "oracle": "UNSAFE",
+          "rule": "ALLOW",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.01,
+          "vmin": 0.9376,
+          "vmax": 1.06,
+          "oracle": "UNSAFE",
+          "rule": "ALLOW",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.02,
+          "vmin": 0.9342,
+          "vmax": 1.0616,
+          "oracle": "UNSAFE",
+          "rule": "ALLOW",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.03,
+          "vmin": 0.9395,
+          "vmax": 1.0624,
+          "oracle": "UNSAFE",
+          "rule": "ALLOW",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.04,
+          "vmin": 0.9384,
+          "vmax": 1.0597,
+          "oracle": "UNSAFE",
+          "rule": "ALLOW",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.05,
+          "vmin": 0.934,
+          "vmax": 1.0616,
+          "oracle": "UNSAFE",
+          "rule": "ALLOW",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.06,
+          "vmin": 0.9384,
+          "vmax": 1.0608,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.07,
+          "vmin": 0.9357,
+          "vmax": 1.07,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.08,
+          "vmin": 0.9394,
+          "vmax": 1.08,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.09,
+          "vmin": 0.9359,
+          "vmax": 1.09,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        },
+        {
+          "source_pu": 1.1,
+          "vmin": 0.9392,
+          "vmax": 1.1,
+          "oracle": "UNSAFE",
+          "rule": "BLOCK",
+          "verifier": "BLOCK"
+        }
+      ]
+    }
+  }
+}

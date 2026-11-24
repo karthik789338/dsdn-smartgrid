@@ -1,0 +1,148 @@
+{
+  "experiment": "E4_unstructured_authorization",
+  "n_cases": 27,
+  "category_counts": {
+    "literal": 7,
+    "paraphrase": 7,
+    "no_order": 7,
+    "negation_trap": 6
+  },
+  "methods": [
+    "keyword_id",
+    "keyword_desc",
+    "llm::phi4-mini",
+    "llm::qwen2.5:7b"
+  ],
+  "overall": {
+    "keyword_id": {
+      "n": 27,
+      "accuracy": 0.519,
+      "false_authorize": 6,
+      "false_deny": 7
+    },
+    "keyword_desc": {
+      "n": 27,
+      "accuracy": 0.667,
+      "false_authorize": 6,
+      "false_deny": 3
+    },
+    "llm::phi4-mini": {
+      "n": 27,
+      "accuracy": 0.778,
+      "false_authorize": 1,
+      "false_deny": 5
+    },
+    "llm::qwen2.5:7b": {
+      "n": 27,
+      "accuracy": 0.741,
+      "false_authorize": 4,
+      "false_deny": 3
+    }
+  },
+  "per_category": {
+    "literal": {
+      "keyword_id": {
+        "n": 7,
+        "accuracy": 1.0,
+        "false_authorize": 0,
+        "false_deny": 0
+      },
+      "keyword_desc": {
+        "n": 7,
+        "accuracy": 1.0,
+        "false_authorize": 0,
+        "false_deny": 0
+      },
+      "llm::phi4-mini": {
+        "n": 7,
+        "accuracy": 0.714,
+        "false_authorize": 0,
+        "false_deny": 2
+      },
+      "llm::qwen2.5:7b": {
+        "n": 7,
+        "accuracy": 0.571,
+        "false_authorize": 0,
+        "false_deny": 3
+      }
+    },
+    "paraphrase": {
+      "keyword_id": {
+        "n": 7,
+        "accuracy": 0.0,
+        "false_authorize": 0,
+        "false_deny": 7
+      },
+      "keyword_desc": {
+        "n": 7,
+        "accuracy": 0.571,
+        "false_authorize": 0,
+        "false_deny": 3
+      },
+      "llm::phi4-mini": {
+        "n": 7,
+        "accuracy": 0.571,
+        "false_authorize": 0,
+        "false_deny": 3
+      },
+      "llm::qwen2.5:7b": {
+        "n": 7,
+        "accuracy": 1.0,
+        "false_authorize": 0,
+        "false_deny": 0
+      }
+    },
+    "no_order": {
+      "keyword_id": {
+        "n": 7,
+        "accuracy": 1.0,
+        "false_authorize": 0,
+        "false_deny": 0
+      },
+      "keyword_desc": {
+        "n": 7,
+        "accuracy": 1.0,
+        "false_authorize": 0,
+        "false_deny": 0
+      },
+      "llm::phi4-mini": {
+        "n": 7,
+        "accuracy": 0.857,
+        "false_authorize": 1,
+        "false_deny": 0
+      },
+      "llm::qwen2.5:7b": {
+        "n": 7,
+        "accuracy": 0.571,
+        "false_authorize": 3,
+        "false_deny": 0
+      }
+    },
+    "negation_trap": {
+      "keyword_id": {
+        "n": 6,
+        "accuracy": 0.0,
+        "false_authorize": 6,
+        "false_deny": 0
+      },
+      "keyword_desc": {
+        "n": 6,
+        "accuracy": 0.0,
+        "false_authorize": 6,
+        "false_deny": 0
+      },
+      "llm::phi4-mini": {
+        "n": 6,
+        "accuracy": 1.0,
+        "false_authorize": 0,
+        "false_deny": 0
+      },
+      "llm::qwen2.5:7b": {
+        "n": 6,
+        "accuracy": 0.833,
+        "false_authorize": 1,
+        "false_deny": 0
+      }
+    }
+  }
+}

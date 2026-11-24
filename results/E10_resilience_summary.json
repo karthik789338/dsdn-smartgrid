@@ -1,0 +1,122 @@
+{
+  "control_plane_substrate": {
+    "source": "pilot E0 fleet23 (read-only)",
+    "available": true,
+    "switches": 24,
+    "controllers": 3,
+    "controller_targets": {
+      "tcp:172.20.0.5:6653": 8,
+      "tcp:172.20.0.6:6653": 8,
+      "tcp:172.20.0.7:6653": 8
+    },
+    "switches_per_controller": 8,
+    "connected_bindings": 24,
+    "mode": {
+      "secure": 24
+    },
+    "fabric_json": "/home/ubuntu/gridcad/results/E0/fleet23/20261122T232234Z_3q4sa0_9/fabric.json",
+    "persistent_fwd_rules": 261,
+    "persistent_punt_rules": 360,
+    "flow_entries_with_duration": 621,
+    "flow_duration_max_s": 269.6,
+    "flow_duration_min_s": 8.1
+  },
+  "fault_injection": {
+    "incidents_per_mode": 11,
+    "modes": {
+      "no_fault": {
+        "n": 11,
+        "deployed": 11,
+        "unsafe_outcomes": 0,
+        "degradation": {
+          "DEPLOYED": 11
+        }
+      },
+      "detector_down": {
+        "n": 11,
+        "deployed": 0,
+        "unsafe_outcomes": 0,
+        "degradation": {
+          "HOLD_detector_down": 11
+        }
+      },
+      "llm_down": {
+        "n": 11,
+        "deployed": 3,
+        "unsafe_outcomes": 0,
+        "degradation": {
+          "DEPLOYED": 3,
+          "HOLD_llm_down_not_rule_coverable": 8
+        }
+      },
+      "rag_down": {
+        "n": 11,
+        "deployed": 9,
+        "unsafe_outcomes": 0,
+        "degradation": {
+          "DEPLOYED": 9,
+          "BLOCKED_SAFE": 2
+        }
+      },
+      "validator_down": {
+        "n": 11,
+        "deployed": 0,
+        "unsafe_outcomes": 0,
+        "degradation": {
+          "FAIL_CLOSED_validator_down": 11
+        }
+      },
+      "controller_unreachable": {
+        "n": 11,
+        "deployed": 0,
+        "unsafe_outcomes": 0,
+        "degradation": {
+          "QUEUED_controller_unreachable": 11
+        }
+      },
+      "controller_failover": {
+        "cluster_instances": 3,
+        "switches_per_instance": 8,
+        "switches_rehomed_on_one_instance_loss": 8,
+        "reconcile_idempotent": true,
+        "duplicate_or_conflicting_master_block": 0,
+        "master_reachable_throughout": true,
+        "live_failover_wallclock_s": null,
+        "note": "redundancy + sharding are real pilot facts; reconcile correctness is deterministic; live failover latency not measured this session (ONOS not running)."
+      }
+    },
+    "headline": {
+      "total_injections": 66,
+      "unsafe_outcomes": 0
+    }
+  },
+  "recovery_after_fault_cleared": {
+    "detector_down": {
+      "incidents_processed_after_recovery": 11,
+      "unsafe_after_recovery": 0
+    },
+    "llm_down": {
+      "incidents_processed_after_recovery": 11,
+      "unsafe_after_recovery": 0
+    },
+    "rag_down": {
+      "incidents_processed_after_recovery": 11,
+      "unsafe_after_recovery": 0
+    },
+    "validator_down": {
+      "incidents_processed_after_recovery": 11,
+      "unsafe_after_recovery": 0
+    },
+    "controller_unreachable": {
+      "incidents_processed_after_recovery": 11,
+      "unsafe_after_recovery": 0
+    }
+  },
+  "caveats": [
+    "Modes detector_down/validator_down/controller_unreachable verify fail-safe CONTROL FLOW deterministically (architectural invariants).",
+    "Mode rag_down issues REAL phi4-mini calls with an empty KB; unsafe_outcomes counts any physically-unsafe or master-targeting deploy.",
+    "Controller_failover: 3-instance redundancy + 8-switch sharding are REAL pilot facts; reconcile correctness is deterministic; live failover wall-clock latency is NOT measured this session.",
+    "Substrate (switch/controller/flow counts) read read-only from the E0 pilot; nothing in ~/gridcad was modified."
+  ],
+  "elapsed_s": 23.8
+}

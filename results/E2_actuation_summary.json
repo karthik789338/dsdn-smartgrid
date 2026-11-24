@@ -1,0 +1,36 @@
+{
+  "experiment": "E2_actuation_path_latency",
+  "feeders": {
+    "IEEE13": {
+      "nodes": 41,
+      "compile_s": 0.0029,
+      "solve_ms_p50": 0.093,
+      "solve_ms_p95": 0.122,
+      "solve_ms_p99": 0.216,
+      "solve_ms_mean": 0.101,
+      "solve_ms_max": 0.216,
+      "n": 30
+    },
+    "IEEE34": {
+      "nodes": 95,
+      "compile_s": 0.0078,
+      "solve_ms_p50": 0.144,
+      "solve_ms_p95": 0.288,
+      "solve_ms_p99": 0.314,
+      "solve_ms_mean": 0.161,
+      "solve_ms_max": 0.314,
+      "n": 30
+    },
+    "IEEE123": {
+      "nodes": 278,
+      "compile_s": 0.0099,
+      "solve_ms_p50": 0.309,
+      "solve_ms_p95": 0.346,
+      "solve_ms_p99": 0.352,
+      "solve_ms_mean": 0.314,
+      "solve_ms_max": 0.352,
+      "n": 30
+    }
+  },
+  "interpretation": "The OpenDSS verification solve -- the per-candidate physics/applied-safety check -- is tens of milliseconds even at 278 nodes; compile is a one-time cost. The actuation path is dominated by the DNP3 command round-trip, not the solve."
+}

@@ -1,0 +1,47 @@
+{
+  "experiment": "E_detector_replay_and_model_augmentation",
+  "base": "detector_experiment.py (protocol features, real pilot DNP3 pcap, campaign-blocked honest eval)",
+  "replay_dup_recent_ablation": {
+    "replay_recall_with_dup_recent": 0.9667,
+    "replay_recall_without_dup_recent": 0.9667,
+    "macro_f1_with": 0.8954,
+    "macro_f1_without": 0.8947,
+    "note": "dup_recent is a protocol-freshness signal; replayed frames are statistically benign so flow-only detectors (ITHACA E5: 0.27) miss them."
+  },
+  "per_class_recall_with_dup_recent": {
+    "benign": 1.0,
+    "cold_restart": 0.4062,
+    "fc_fuzzing": 0.9792,
+    "injection_flood": 0.9667,
+    "master_impersonation": 1.0,
+    "recon_sweep": 0.9891,
+    "replay": 0.9667,
+    "time_sync_manip": 1.0,
+    "unauthorized_operate": 1.0,
+    "unsol_disable_flood": 1.0,
+    "warm_restart": 0.5625
+  },
+  "per_class_recall_without_dup_recent": {
+    "benign": 1.0,
+    "cold_restart": 0.4062,
+    "fc_fuzzing": 0.9792,
+    "injection_flood": 0.9667,
+    "master_impersonation": 1.0,
+    "recon_sweep": 0.9783,
+    "replay": 0.9667,
+    "time_sync_manip": 1.0,
+    "unauthorized_operate": 1.0,
+    "unsol_disable_flood": 1.0,
+    "warm_restart": 0.5625
+  },
+  "honest_model_comparison_campaign_blocked": {
+    "xgboost_honest": {
+      "acc": 0.9583,
+      "macro_f1": 0.8842
+    },
+    "rf_honest": {
+      "acc": 0.9646,
+      "macro_f1": 0.8954
+    }
+  }
+}

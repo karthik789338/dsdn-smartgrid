@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "experiment": "E9 - prequential live-RAG with held-out separation + CIs",
+    "n_incidents": 1000,
+    "k": 5,
+    "final_window": 200,
+    "retriever": "HashingVectorizer char_wb 3-5grams + cosine (no fitted vocab; reproducible)",
+    "families": 10,
+    "label_classes": 8,
+    "note": "Prequential test-then-train: each incident is predicted from PRIOR incidents only (exact duplicates excluded = held-out separation), then ingested. no_rag = running most-frequent mitigation; live_rag = leakage-free kNN (the honest number); leaky_rag = kNN whose pool includes the current incident (the inflated number a leak-prone eval reports). The leaky-minus-honest gap is the leakage hazard R2-10 flagged."
+  },
+  "no_rag": {
+    "overall_acc": 0.188,
+    "final_window_acc": 0.16,
+    "final_window_ci95": [
+      0.11,
+      0.21
+    ],
+    "learning_curve_cumacc": {
+      "100": 0.17,
+      "200": 0.18,
+      "300": 0.177,
+      "400": 0.19,
+      "500": 0.184,
+      "600": 0.19,
+      "700": 0.193,
+      "800": 0.195,
+      "900": 0.196,
+      "1000": 0.188
+    }
+  },
+  "live_rag": {
+    "overall_acc": 0.919,
+    "final_window_acc": 0.99,
+    "final_window_ci95": [
+      0.975,
+      1.0
+    ],
+    "learning_curve_cumacc": {
+      "100": 0.59,
+      "200": 0.72,
+      "300": 0.79,
+      "400": 0.83,
+      "500": 0.86,
+      "600": 0.877,
+      "700": 0.887,
+      "800": 0.901,
+      "900": 0.91,
+      "1000": 0.919
+    }
+  },
+  "leaky_rag": {
+    "overall_acc": 0.975,
+    "final_window_acc": 0.99,
+    "final_window_ci95": [
+      0.975,
+      1.0
+    ],
+    "learning_curve_cumacc": {
+      "100": 0.87,
+      "200": 0.915,
+      "300": 0.937,
+      "400": 0.953,
+      "500": 0.962,
+      "600": 0.963,
+      "700": 0.967,
+      "800": 0.971,
+      "900": 0.972,
+      "1000": 0.975
+    }
+  },
+  "leaky_minus_live_final_window": 0.0,
+  "live_minus_norag_final_window": 0.83
+}

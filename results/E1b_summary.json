@@ -1,0 +1,71 @@
+{
+  "experiment": "E1b_real_dnp3_to_opendss",
+  "core_run": {
+    "run_id": "e1b_ieee13_03",
+    "feeder": "IEEE13",
+    "requested_load_mult": 1.02,
+    "dnp3_delivered_value": 1.0199999809265137,
+    "dnp3_origin": "outstation_local_dnp3_analog_output_status_change",
+    "dnp3_schema": "gridcad_e1b3_control_v1",
+    "station_id": 7,
+    "port": 21007,
+    "physical_change_observed": true,
+    "max_node_voltage_change_pu": 0.006572208756306042,
+    "loss_change_kw": 4.99505618148801,
+    "safety_accepted": true,
+    "rollback_verified": true,
+    "rollback_max_node_error_pu": 0.0,
+    "pass": true,
+    "baseline_v": [
+      0.9608427430890604,
+      1.0560497125472676
+    ],
+    "applied_v": [
+      0.9579249777712039,
+      1.0560409416423933
+    ]
+  },
+  "gate1_command_authorization": {
+    "bounds": [
+      1.005,
+      1.03
+    ],
+    "authorized_1p02": {
+      "accepted": true,
+      "value": 1.02,
+      "error": ""
+    },
+    "over_range_1p10": {
+      "accepted": false,
+      "value": null,
+      "error": "ValueError: load multiplier must be finite and within [1.005, 1.03]"
+    },
+    "under_range_0p99": {
+      "accepted": false,
+      "value": null,
+      "error": "ValueError: load multiplier must be finite and within [1.005, 1.03]"
+    }
+  },
+  "gate2_envelope_freshness_identity": {
+    "fresh_envelope": {
+      "accepted": true,
+      "value": 1.02,
+      "error": ""
+    },
+    "stale_envelope": {
+      "accepted": false,
+      "value": null,
+      "error": "ValueError: Stale or future command: age=848712623.25s"
+    },
+    "identity_mismatch": {
+      "accepted": false,
+      "value": null,
+      "error": "ValueError: Command envelope identity or point mapping differs"
+    }
+  },
+  "interpretation": {
+    "gate1": "over-range and under-range setpoints refused at the command layer before transmission; authorized setpoint accepted",
+    "gate2": "stale and identity-mismatched envelopes rejected; fresh matching envelope accepted",
+    "core": "a real DNP3 AnalogOutputFloat32 traversed a genuine master->outstation session, was read back off the live outstation, applied to OpenDSS IEEE13 with a measurable physical change, passed the applied-safety gate, and was rolled back to the exact baseline"
+  }
+}

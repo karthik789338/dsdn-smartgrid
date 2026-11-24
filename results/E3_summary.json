@@ -1,0 +1,191 @@
+{
+  "experiment": "E3_consequence_aware_authorization_vs_baselines",
+  "n_scenarios": 30,
+  "feeders": [
+    "IEEE123",
+    "IEEE13",
+    "IEEE34"
+  ],
+  "oracle": "OpenDSS check_applied_safety (E1 physics gate) -- ALLOW iff physically safe",
+  "oracle_label_counts": {
+    "ALLOW": 17,
+    "BLOCK": 13
+  },
+  "methods": {
+    "command_bound_rule": "pilot fixed band [1.005,1.030], physics-blind (frozen)",
+    "retrieval_knn": "nearest IEEE13-seeded label, physics-blind (frozen, IEEE13-only seed)",
+    "llm": "phi4-mini deciding from grid state, no solver",
+    "physics_verifier": "runs OpenDSS on the real feeder (the consequence-aware gate)",
+    "llm_plus_verifier": "LLM proposes, physics verifier certifies (deployed GridCAD)"
+  },
+  "overall": {
+    "command_bound_rule": {
+      "n": 30,
+      "accuracy": 0.633,
+      "unsafe_allowed": 6,
+      "over_block": 5,
+      "unsafe_allowed_rate": 0.2,
+      "over_block_rate": 0.167
+    },
+    "retrieval_knn": {
+      "n": 30,
+      "accuracy": 0.633,
+      "unsafe_allowed": 9,
+      "over_block": 2,
+      "unsafe_allowed_rate": 0.3,
+      "over_block_rate": 0.067
+    },
+    "llm": {
+      "n": 30,
+      "accuracy": 0.4,
+      "unsafe_allowed": 2,
+      "over_block": 16,
+      "unsafe_allowed_rate": 0.067,
+      "over_block_rate": 0.533
+    },
+    "physics_verifier": {
+      "n": 30,
+      "accuracy": 1.0,
+      "unsafe_allowed": 0,
+      "over_block": 0,
+      "unsafe_allowed_rate": 0.0,
+      "over_block_rate": 0.0
+    },
+    "llm_plus_verifier": {
+      "n": 30,
+      "accuracy": 1.0,
+      "unsafe_allowed": 0,
+      "over_block": 0,
+      "unsafe_allowed_rate": 0.0,
+      "over_block_rate": 0.0
+    }
+  },
+  "per_feeder": {
+    "IEEE123": {
+      "command_bound_rule": {
+        "n": 10,
+        "accuracy": 0.7,
+        "unsafe_allowed": 0,
+        "over_block": 3,
+        "unsafe_allowed_rate": 0.0,
+        "over_block_rate": 0.3
+      },
+      "retrieval_knn": {
+        "n": 10,
+        "accuracy": 0.7,
+        "unsafe_allowed": 1,
+        "over_block": 2,
+        "unsafe_allowed_rate": 0.1,
+        "over_block_rate": 0.2
+      },
+      "llm": {
+        "n": 10,
+        "accuracy": 0.0,
+        "unsafe_allowed": 1,
+        "over_block": 9,
+        "unsafe_allowed_rate": 0.1,
+        "over_block_rate": 0.9
+      },
+      "physics_verifier": {
+        "n": 10,
+        "accuracy": 1.0,
+        "unsafe_allowed": 0,
+        "over_block": 0,
+        "unsafe_allowed_rate": 0.0,
+        "over_block_rate": 0.0
+      },
+      "llm_plus_verifier": {
+        "n": 10,
+        "accuracy": 1.0,
+        "unsafe_allowed": 0,
+        "over_block": 0,
+        "unsafe_allowed_rate": 0.0,
+        "over_block_rate": 0.0
+      }
+    },
+    "IEEE13": {
+      "command_bound_rule": {
+        "n": 10,
+        "accuracy": 0.8,
+        "unsafe_allowed": 0,
+        "over_block": 2,
+        "unsafe_allowed_rate": 0.0,
+        "over_block_rate": 0.2
+      },
+      "retrieval_knn": {
+        "n": 10,
+        "accuracy": 1.0,
+        "unsafe_allowed": 0,
+        "over_block": 0,
+        "unsafe_allowed_rate": 0.0,
+        "over_block_rate": 0.0
+      },
+      "llm": {
+        "n": 10,
+        "accuracy": 0.3,
+        "unsafe_allowed": 0,
+        "over_block": 7,
+        "unsafe_allowed_rate": 0.0,
+        "over_block_rate": 0.7
+      },
+      "physics_verifier": {
+        "n": 10,
+        "accuracy": 1.0,
+        "unsafe_allowed": 0,
+        "over_block": 0,
+        "unsafe_allowed_rate": 0.0,
+        "over_block_rate": 0.0
+      },
+      "llm_plus_verifier": {
+        "n": 10,
+        "accuracy": 1.0,
+        "unsafe_allowed": 0,
+        "over_block": 0,
+        "unsafe_allowed_rate": 0.0,
+        "over_block_rate": 0.0
+      }
+    },
+    "IEEE34": {
+      "command_bound_rule": {
+        "n": 10,
+        "accuracy": 0.4,
+        "unsafe_allowed": 6,
+        "over_block": 0,
+        "unsafe_allowed_rate": 0.6,
+        "over_block_rate": 0.0
+      },
+      "retrieval_knn": {
+        "n": 10,
+        "accuracy": 0.2,
+        "unsafe_allowed": 8,
+        "over_block": 0,
+        "unsafe_allowed_rate": 0.8,
+        "over_block_rate": 0.0
+      },
+      "llm": {
+        "n": 10,
+        "accuracy": 0.9,
+        "unsafe_allowed": 1,
+        "over_block": 0,
+        "unsafe_allowed_rate": 0.1,
+        "over_block_rate": 0.0
+      },
+      "physics_verifier": {
+        "n": 10,
+        "accuracy": 1.0,
+        "unsafe_allowed": 0,
+        "over_block": 0,
+        "unsafe_allowed_rate": 0.0,
+        "over_block_rate": 0.0
+      },
+      "llm_plus_verifier": {
+        "n": 10,
+        "accuracy": 1.0,
+        "unsafe_allowed": 0,
+        "over_block": 0,
+        "unsafe_allowed_rate": 0.0,
+        "over_block_rate": 0.0
+      }
+    }
+  }
+}
