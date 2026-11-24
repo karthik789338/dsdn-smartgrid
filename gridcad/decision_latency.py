@@ -218,7 +218,7 @@ def main():
     with open(os.path.join(args.out, "per_trial.jsonl"), "w") as f:
         for r in per_trial:
             f.write(json.dumps(r) + "\n")
-    with open(os.path.join(args.out, "E2_decision_summary.json"), "w") as f:
+    with open(os.path.join(args.out, "decision_latency_summary.json"), "w") as f:
         json.dump(summary, f, indent=2)
 
     print("\n=== E2 decision-path latency (p50 / p95 / p99) ===")

@@ -94,7 +94,7 @@ def main():
                     "gate, and was rolled back to the exact baseline",
         },
     }
-    out = RESULTS / "E1b_summary.json"
+    out = RESULTS / "dnp3_safety_gates_summary.json"
     out.write_text(json.dumps(summary, indent=2))
 
     # compact console view

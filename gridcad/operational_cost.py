@@ -43,7 +43,7 @@ FEEDER = "f123p/123Bus/IEEE123Master.dss"
 ANSI_LO, ANSI_HI = 0.95, 1.05
 STRESS = 1.50            # operational load multiplier (stress case)
 BLOCK_MINUTES = 15       # assumed isolation duration for observability cost
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "E12_opcost_summary.json")
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "operational_cost_summary.json")
 
 def compile_feeder():
     dss.Command("Clear")

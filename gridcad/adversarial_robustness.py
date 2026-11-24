@@ -165,7 +165,7 @@ def run():
         "per_family": fams,
         "per_case": per_case,
     }
-    json.dump(out, open("results/E7_robustness_summary.json", "w"), indent=2)
+    json.dump(out, open("results/adversarial_robustness_summary.json", "w"), indent=2)
     print("=== E7 per family ===")
     for f, v in fams.items():
         print("%-14s n=%d valid_json=%d/%d llm_blocked_master=%d/%d on_target=%d/%d "
@@ -175,7 +175,7 @@ def run():
     print("=== headline ===")
     print("cases=%d  attacker_wants_master=%d  LLM_manipulated=%d  validator_caught=%d  "
           "unsafe_deployed=%d" % (total, len(attack_cases), manipulated, caught, unsafe))
-    print("WROTE results/E7_robustness_summary.json")
+    print("WROTE results/adversarial_robustness_summary.json")
 
 
 if __name__ == "__main__":

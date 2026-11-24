@@ -85,6 +85,6 @@ summary = {
     "original_2_vectors": agg([v for v in per if v in ORIG]),
     "broadened_4_vectors": agg([v for v in per if v not in ORIG]),
 }
-with open("results/E5_llm_broaden_summary.json", "w") as f:
+with open("results/attack_vector_generalization_summary.json", "w") as f:
     json.dump(summary, f, indent=2)
 print(json.dumps(summary, indent=2))

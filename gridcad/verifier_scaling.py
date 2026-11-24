@@ -134,5 +134,5 @@ for name, path in FEEDERS.items():
              f["verify_cycle_ms"]["max"], n_safe, len(SRC),
              f["safe_source_pu_window"], ua, ob))
 
-json.dump(out, open("results/E6_scale_summary.json", "w"), indent=2)
-print("WROTE results/E6_scale_summary.json")
+json.dump(out, open("results/verifier_scaling_summary.json", "w"), indent=2)
+print("WROTE results/verifier_scaling_summary.json")

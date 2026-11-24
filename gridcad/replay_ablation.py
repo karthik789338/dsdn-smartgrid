@@ -75,7 +75,7 @@ out = {
     "per_class_recall_without_dup_recent": rec_no,
     "honest_model_comparison_campaign_blocked": model_cmp,
 }
-json.dump(out, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "E_detector_replay_ablation_summary.json"), "w"), indent=2)
+json.dump(out, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "replay_ablation_summary.json"), "w"), indent=2)
 print("== REPLAY recall (honest, campaign-blocked) ==")
 print(f"  with dup_recent   : {rec_with.get('replay')}")
 print(f"  without dup_recent: {rec_no.get('replay')}")
@@ -83,4 +83,4 @@ print(f"  macro-F1 with/without: {f1_with} / {f1_no}")
 print("== honest model comparison (behavioral feats, campaign-blocked) ==")
 for k, v in model_cmp.items():
     print(f"  {k:16s} {v}")
-print("WROTE E_detector_replay_ablation_summary.json")
+print("WROTE replay_ablation_summary.json")

@@ -213,7 +213,7 @@ def main():
                                      validator=judge(intel, bp, rag_meta), latency_s=dt, error=None))
                 print(f"{model:12s} {mode:8s} {aid} {dt:5.2f}s", flush=True)
 
-    with open(os.path.join(args.out, "per_alert.csv"), "w", newline="") as f:
+    with open(os.path.join(args.out, "prompt_leakage_rescore_per_alert.csv"), "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
 
     groups = defaultdict(list)
@@ -236,7 +236,7 @@ def main():
                          acc_inject=wilson(sum(bool(r["correct"]) for r in rs if r["vector"] == "FC_INJECTION"),
                                            sum(r["vector"] == "FC_INJECTION" for r in rs))[0],
                          lat_p50=round(lat[n // 2], 4), lat_p95=round(lat[min(n - 1, int(0.95 * n))], 4)))
-    with open(os.path.join(args.out, "summary.csv"), "w", newline="") as f:
+    with open(os.path.join(args.out, "prompt_leakage_rescore_per_scenario.csv"), "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(summ[0].keys())); w.writeheader(); w.writerows(summ)
     for r in sorted(summ, key=lambda r: (r["method"], r["mode"], r["scoring"])):
         print(f"{r['method']:14s} {r['mode']:8s} {r['scoring']:10s} acc={r['acc']:.2f} struct={r['struct_acc']:.2f} "

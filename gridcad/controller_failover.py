@@ -24,7 +24,7 @@ NODE = {"172.20.0.5": ("onos-1", 8181),
 D = "of:0000a2c10641aa48"           # the multi-homed ftest switch
 TRIALS = 7
 PROG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "e10b_prog.txt")
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "E10b_failover_summary.json")
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "controller_failover_summary.json")
 
 def g(port, path):
     r = urllib.request.Request("http://localhost:%d%s" % (port, path),

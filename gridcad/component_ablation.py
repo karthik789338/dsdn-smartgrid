@@ -169,7 +169,7 @@ def run():
                           "speedup": round(llm_ms / rule_ms) if rule_ms else None},
         "per_case": per_case,
     }
-    json.dump(out, open("results/E8_ablation_summary.json", "w"), indent=2)
+    json.dump(out, open("results/component_ablation_summary.json", "w"), indent=2)
     print("=== E8 ablation (IEEE123, %d setpoints: %d safe / %d unsafe) ===" % (len(SETPOINTS), n_safe, n_unsafe))
     print("%-14s | LLM_acc | unsafe_allowed(noVerif) | over_block | unsafe_allowed(Verif ON)" % "config")
     for cfg in configs:
@@ -179,7 +179,7 @@ def run():
                  c["over_block_noverifier"], c["unsafe_allowed_verifier_on"]))
     print("Tier-0 latency: rule path %.5f ms vs LLM path %.1f ms (~%sx)"
           % (rule_ms, llm_ms, out["tier0_latency"]["speedup"]))
-    print("WROTE results/E8_ablation_summary.json")
+    print("WROTE results/component_ablation_summary.json")
 
 
 if __name__ == "__main__":

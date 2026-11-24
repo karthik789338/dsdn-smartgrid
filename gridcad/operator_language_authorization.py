@@ -195,7 +195,7 @@ def main():
     with open(os.path.join(args.out, "E4_per_case.jsonl"), "w") as f:
         for r in rows:
             f.write(json.dumps(r) + "\n")
-    with open(os.path.join(args.out, "E4_summary.json"), "w") as f:
+    with open(os.path.join(args.out, "operator_language_authorization_summary.json"), "w") as f:
         json.dump(summary, f, indent=2)
 
     print(f"\n=== E4: {len(rows)} cases ===")
@@ -207,7 +207,7 @@ def main():
     for m in methods:
         s = summary["per_category"]["negation_trap"][m]
         print(f"  {m:18s} acc={s['accuracy']} false_authorize={s['false_authorize']}")
-    print("\nWROTE E4_summary.json")
+    print("\nWROTE operator_language_authorization_summary.json")
 
 
 if __name__ == "__main__":

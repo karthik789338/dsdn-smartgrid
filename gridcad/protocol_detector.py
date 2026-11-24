@@ -16,7 +16,7 @@ with a documented DNP3 attack taxonomy. Demonstrates:
 
 Benign packets are the REAL captured DNP3 traffic. Attack packets are synthesised
 as documented perturbations/injections relative to that baseline. All synthetic.
-Deterministic (seeded). Writes E_detector_summary.json.
+Deterministic (seeded). Writes protocol_detector_summary.json.
 """
 import subprocess, json, sys
 from collections import defaultdict, deque
@@ -273,7 +273,7 @@ def main():
         "verdict": "merge cold+warm restart -> 10 classes" if f1_10 >= f1_11 else "keep 11",
     }
 
-    with open("results/E_detector_summary.json", "w") as f:
+    with open("results/protocol_detector_summary.json", "w") as f:
         json.dump(summary, f, indent=2)
     print(json.dumps(summary, indent=2))
 

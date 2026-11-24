@@ -31,7 +31,7 @@ ap.add_argument("--feeder", default="IEEE13")
 ap.add_argument("--lo", type=float, default=0.80)
 ap.add_argument("--hi", type=float, default=1.30)
 ap.add_argument("--step", type=float, default=0.01)
-ap.add_argument("--out", default=str(Path("results") / "E1_phys"))
+ap.add_argument("--out", default=str(Path("results") / "feeder_voltage_sweep"))
 args = ap.parse_args()
 
 sys.path.insert(0, args.pilot)
@@ -140,7 +140,7 @@ def main():
         "rollback_max_dv_pu": None if rollback_dv is None else round(rollback_dv, 8),
         "rollback_clean": None if rollback_dv is None else (rollback_dv < 1e-6),
     }
-    (outdir / "summary.json").write_text(json.dumps(summary, indent=2))
+    (outdir / "feeder_voltage_sweep_outcomes.json").write_text(json.dumps(summary, indent=2))
     print(json.dumps(summary, indent=2))
     print(f"\nwrote {outdir/'per_load_mult.csv'} ({len(rows)} rows)")
 

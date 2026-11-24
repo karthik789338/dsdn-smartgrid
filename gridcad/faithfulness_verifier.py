@@ -13,7 +13,7 @@ Part A: deterministic verifier on the same 8 decisions x 4 defects as E11.
 Part B: live-OpenDSS grounding -- prove the physics verdict is a real oracle
         call, not a stored label.
 
-LLM-ensemble baseline numbers are taken from the E11 run (E11_judge_summary.json)
+LLM-ensemble baseline numbers are taken from the E11 run (faithfulness_judge_summary.json)
 for an apples-to-apples comparison on the identical decisions/defects.
 """
 import json, re, sys, os
@@ -180,8 +180,8 @@ def part_b():
 if __name__ == "__main__":
     # LLM-ensemble baseline from the E11 run (same decisions/defects)
     llm_ref = None
-    for p in [os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "E11_judge_summary.json"),
-              os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "E11_judge_summary.json")]:
+    for p in [os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "faithfulness_judge_summary.json"),
+              os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "faithfulness_judge_summary.json")]:
         if os.path.exists(p):
             llm_ref = json.load(open(p)); llm_ref_path = p; break
 
@@ -198,7 +198,7 @@ if __name__ == "__main__":
             {"source": llm_ref_path,
              "note": "robust_acc per defect from the 4-judge majority ensemble"}
             if llm_ref else {"note": "E11 summary not found at expected paths; "
-                             "cite E11_judge_summary.json (ensemble overall 0.75, "
+                             "cite faithfulness_judge_summary.json (ensemble overall 0.75, "
                              "physics_contradict 0.25)."}),
         "limitation": ("Catches defects that surface as a mismatch with the "
                        "structured record (wrong verdict, wrong/absent target, "
@@ -207,7 +207,7 @@ if __name__ == "__main__":
                        "and the LLM judge; the verifier is a reporting/triage aid, "
                        "the OpenDSS gate remains the safety authority."),
     }
-    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "E11b_verifier_summary.json"), "w") as f:
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "faithfulness_verifier_summary.json"), "w") as f:
         json.dump(out, f, indent=2)
     print("== PART A: deterministic verifier ==")
     for dt, a in A["per_defect_acc"].items():
@@ -218,4 +218,4 @@ if __name__ == "__main__":
         print("  skipped:", B["skipped"])
     else:
         print(f"  feeder={os.path.basename(B['feeder'])}  acc={B['acc']:.3f}  (n={B['n_trials']})")
-    print("WROTE E11b_verifier_summary.json")
+    print("WROTE faithfulness_verifier_summary.json")

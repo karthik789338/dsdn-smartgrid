@@ -143,7 +143,7 @@ PLAN = [
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default=str(Path("results") / "E1b_realdnp3"))
+    ap.add_argument("--out", default=str(Path("results") / "dnp3_opendss_endtoend"))
     a = ap.parse_args()
     out = Path(a.out).resolve()
     out.mkdir(parents=True, exist_ok=True)

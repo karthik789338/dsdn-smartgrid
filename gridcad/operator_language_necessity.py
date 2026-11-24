@@ -203,7 +203,7 @@ def run():
         hr = [r for r in rows if r["category"] in HARD]
         fa = sum(1 for r in hr if (r[meth]=="AUTHORIZED" and r["truth"]=="UNAUTHORIZED"))
         summary["hard_false_authorize"][meth] = {"false_authorize": fa, "n_hard_unauth": len(hr)}
-    out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "E4b_necessity_summary.json")
+    out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "operator_language_necessity_summary.json")
     json.dump({"summary": summary, "rows": rows}, open(out, "w"), indent=2)
     print("\n== OVERALL accuracy ==")
     for meth in methods:

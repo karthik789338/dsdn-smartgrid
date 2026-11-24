@@ -172,7 +172,7 @@ summary["leaky_minus_live_final_window"] = round(summary["leaky_rag"]["final_win
 summary["live_minus_norag_final_window"] = round(summary["live_rag"]["final_window_acc"]
                                                  - summary["no_rag"]["final_window_acc"], 3)
 
-json.dump(summary, open("results/E9_live_rag_summary.json", "w"), indent=2)
+json.dump(summary, open("results/live_rag_prequential_summary.json", "w"), indent=2)
 print("=== E9 prequential live-RAG (N=%d, k=%d, %d mitigation classes) ===" % (N, K, len(LABELSET)))
 for cond in ["no_rag", "live_rag", "leaky_rag"]:
     s = summary[cond]
@@ -181,4 +181,4 @@ for cond in ["no_rag", "live_rag", "leaky_rag"]:
 print("live_rag - no_rag (final window) = +%.3f   |   leaky - live (leakage inflation) = +%.3f"
       % (summary["live_minus_norag_final_window"], summary["leaky_minus_live_final_window"]))
 print("live_rag learning curve:", summary["live_rag"]["learning_curve_cumacc"])
-print("WROTE results/E9_live_rag_summary.json")
+print("WROTE results/live_rag_prequential_summary.json")

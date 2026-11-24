@@ -9,10 +9,10 @@ produces. Raw outputs are in `results/`.
   accuracy 0.965 (campaign-blocked); leakage inflation only 0.031; a tree
   ensemble (RandomForest / XGBoost ~0.96) rather than a deep MLP. Cold- and
   warm-restart collapse into one class (confusion 0.516) -> 10 classes at
-  macro-F1 0.989. Output: `E_detector_summary.json`.
+  macro-F1 0.989. Output: `protocol_detector_summary.json`.
 - `replay_ablation.py` -- replay recall for the protocol detector, 0.967,
   versus 0.27 for a flow-statistics detector. Output:
-  `E_detector_replay_ablation_summary.json`.
+  `replay_ablation_summary.json`.
 
 ## Physics safety gate
 - `feeder_voltage_sweep.py` -- load sweep on IEEE 13/34/123; shows the
@@ -25,7 +25,7 @@ produces. Raw outputs are in `results/`.
 ## DNP3 protocol path
 - `dnp3_opendss_endtoend.py` -- a real DNP3 AnalogOutput traverses a live
   master/outstation session and drives OpenDSS; both authorization and
-  freshness gates are exercised. Output: `E1b_realdnp3_summary.json`.
+  freshness gates are exercised. Output: `dnp3_opendss_endtoend_summary.json`.
 
 ## LLM authorization and necessity
 - `prompt_leakage_rescore.py` -- re-scores the authorization task with the
@@ -37,8 +37,8 @@ produces. Raw outputs are in `results/`.
   free-text operator authorization. Against a dependency parser and a
   hand-tuned negation/exclusion parser, the LLM (qwen2.5:7b, 0.857) wins on the
   compositional cases a fixed lexicon cannot enumerate (exception-to-exception,
-  exclusion-set membership, distant scope). Output: `E4_summary.json`,
-  `E4b_necessity_summary.json`.
+  exclusion-set membership, distant scope). Output: `operator_language_authorization_summary.json`,
+  `operator_language_necessity_summary.json`.
 - `attack_vector_generalization.py` -- target selection generalizes across
   six attack vectors; raw master-safety does not (the case for the validator).
 
@@ -64,7 +64,7 @@ produces. Raw outputs are in `results/`.
 - `faithfulness_verifier.py` -- a deterministic verifier that grounds the
   explanation against the structured decision record catches all four defect
   types at 1.00 (physics contradiction 0.25 -> 1.00), with zero position bias
-  and a live-OpenDSS cross-check. Output: `E11b_verifier_summary.json`.
+  and a live-OpenDSS cross-check. Output: `faithfulness_verifier_summary.json`.
 
 ## Online mitigation retrieval
 - `live_rag_prequential.py` -- prequential (test-then-train) evaluation of the

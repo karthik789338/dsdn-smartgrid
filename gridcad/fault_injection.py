@@ -331,9 +331,9 @@ def main():
     ]
     results["elapsed_s"] = round(time.time() - t0, 1)
 
-    outp = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "E10_resilience_summary.json") \
+    outp = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "fault_injection_summary.json") \
         if os.path.isdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "outputs")) \
-        else os.path.join(os.getcwd(), "E10_resilience_summary.json")
+        else os.path.join(os.getcwd(), "fault_injection_summary.json")
     os.makedirs(os.path.dirname(outp), exist_ok=True)
     json.dump(results, open(outp, "w"), indent=2)
     print("\nHEADLINE total_injections=%d unsafe_outcomes=%d" %

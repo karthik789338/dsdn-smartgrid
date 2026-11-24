@@ -38,7 +38,7 @@ FEEDERS = {
 BASE = Path.home() / "data/feeders/electricdss-tst/Version8/Distrib/IEEETestCases"
 
 ap = argparse.ArgumentParser()
-ap.add_argument("--out", default=str(Path("results") / "E1b_realdnp3"))
+ap.add_argument("--out", default=str(Path("results") / "dnp3_opendss_endtoend"))
 ap.add_argument("--connect-timeout", type=float, default=20.0)
 ap.add_argument("--readback-timeout", type=float, default=12.0)
 args = ap.parse_args()

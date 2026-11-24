@@ -237,7 +237,7 @@ def main():
         "the deterministic validator - the judge is a reporting aid whose "
         "trustworthy envelope this phase measures.",
     ]
-    outp = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "E11_judge_summary.json")
+    outp = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "faithfulness_judge_summary.json")
     json.dump(out, open(outp, "w"), indent=2)
     log(f"DONE calls={done} wrote={outp}")
     print("WROTE", outp)

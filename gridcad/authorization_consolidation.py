@@ -70,7 +70,7 @@ def main():
         "overall": overall,
         "per_feeder": {k: dict(v) for k, v in per_feeder.items()},
     }
-    with open(os.path.join(args.out, "E3_summary.json"), "w") as f:
+    with open(os.path.join(args.out, "consequence_aware_authorization_summary.json"), "w") as f:
         json.dump(summary, f, indent=2)
 
     print(f"=== E3: {len(phys)} scenarios, oracle ALLOW={oracle_counts['ALLOW']} "
@@ -84,7 +84,7 @@ def main():
         cells = "  ".join(f"{m.split('_')[0]}:{per_feeder[feeder][m]['accuracy']}/"
                           f"{per_feeder[feeder][m]['unsafe_allowed']}" for m in methods)
         print(f"  {feeder:8s} {cells}")
-    print("\nWROTE E3_summary.json")
+    print("\nWROTE consequence_aware_authorization_summary.json")
 
 
 if __name__ == "__main__":

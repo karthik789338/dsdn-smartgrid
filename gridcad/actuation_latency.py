@@ -79,9 +79,9 @@ def main():
                "interpretation": "The OpenDSS verification solve -- the per-candidate physics/applied-safety "
                                  "check -- is tens of milliseconds even at 278 nodes; compile is a one-time cost. "
                                  "The actuation path is dominated by the DNP3 command round-trip, not the solve."}
-    with open(os.path.join(args.out, "E2_actuation_summary.json"), "w") as f:
+    with open(os.path.join(args.out, "actuation_latency_summary.json"), "w") as f:
         json.dump(summary, f, indent=2)
-    print("WROTE", os.path.join(args.out, "E2_actuation_summary.json"))
+    print("WROTE", os.path.join(args.out, "actuation_latency_summary.json"))
 
 
 if __name__ == "__main__":
