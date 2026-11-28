@@ -23,9 +23,16 @@ produces. Raw outputs are in `results/`.
   by the physics experiments and the real-DNP3 path.
 
 ## DNP3 protocol path
-- `dnp3_opendss_endtoend.py` -- a real DNP3 AnalogOutput traverses a live
-  master/outstation session and drives OpenDSS; both authorization and
-  freshness gates are exercised. Output: `dnp3_opendss_endtoend_summary.json`.
+- `realdnp3_endtoend/run_multifeeder_endtoend.sh` -- a real dnp3_python/opendnp3
+  master issues AnalogOutputFloat32 load-multiplier commands to a real DNP3
+  outstation across IEEE13/34/123; authorized commands are applied to the
+  isolated OpenDSS feeder, validated against ANSI Range A, and rolled back. All
+  authorized commands are delivered over real DNP3; the physics oracle catches
+  an authorized-but-unsafe command on IEEE34 (undervoltage), and the command-
+  authorization band refuses the over-range 1.10 command before delivery.
+  Output: `dnp3_opendss_endtoend_summary.json`. A single-station deep dive
+  (over-range AnalogOutput rejection with full rollback detail) is in
+  `dnp3_safety_gates_summary.json`. See `realdnp3_endtoend/README.md` to run.
 
 ## LLM authorization and necessity
 - `prompt_leakage_rescore.py` -- re-scores the authorization task with the

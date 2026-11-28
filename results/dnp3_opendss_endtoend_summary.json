@@ -1,70 +1,158 @@
 {
-  "runs": 5,
+  "experiment": "GridCAD real-DNP3 to OpenDSS multi-feeder end-to-end",
+  "description": "Real dnp3_python/opendnp3 master issues AnalogOutputFloat32 load-multiplier commands to a real DNP3 outstation (two-process, station 7, port 21007). Authorized commands are applied to an isolated OpenDSS feeder, validated against ANSI Range A by the physics oracle, and automatically rolled back.",
+  "dnp3_stack": "dnp3_python/opendnp3, Python 3.10, two-process master+outstation, DirectOperate",
+  "transport": "real DNP3 TCP master 10.0.0.1 -> outstation 10.0.0.7:21007",
+  "feeders_tested": [
+    "IEEE13",
+    "IEEE34",
+    "IEEE123"
+  ],
+  "ansi_range_a_pu": [
+    0.95,
+    1.05
+  ],
+  "command_authorization_band": [
+    1.005,
+    1.03
+  ],
+  "runs": 4,
+  "all_gates_behaved_correctly": true,
+  "dnp3_delivered_for_authorized_commands": true,
+  "generated_utc": "2026-11-28T06:57:00.607310+00:00",
   "results": [
     {
+      "run": "ieee13_safe",
       "feeder": "IEEE13",
-      "mode": "authorized_safe_expected",
-      "requested_load_mult": 1.02,
+      "requested_load_multiplier": 1.02,
+      "policy_mode_expected": "authorized_safe",
       "command_authorized": true,
-      "dnp3_connected": null,
-      "dnp3_delivered": false,
-      "dnp3_status_readback": null,
-      "max_node_dv_pu": null,
-      "applied_safety_ok": null,
-      "rollback_max_dv_pu": null,
-      "outcome": "dnp3_not_delivered"
+      "dnp3_delivered": true,
+      "received_load_multiplier": 1.0199999809265137,
+      "dnp3_schema": "gridcad_e1b3_control_v1",
+      "station_id": 7,
+      "port": 21007,
+      "safety_accepted": true,
+      "rollback_verified": true,
+      "pass": true,
+      "physical_change_observed": true,
+      "max_node_voltage_change_pu": 0.006572208756306042,
+      "loss_change_kw": 4.99505618148801,
+      "baseline_v_pu": [
+        0.9608427430890604,
+        1.0560497125472676
+      ],
+      "node_count": 41,
+      "applied_v_pu": [
+        0.9579249777712039,
+        1.0560409416423933
+      ],
+      "applied_undervoltage_nodes": 0,
+      "applied_overvoltage_nodes": 2,
+      "rollback_max_node_error_pu": 0.0,
+      "reasons": [],
+      "gate_behaved_correctly": true
     },
     {
+      "run": "ieee34_reject",
       "feeder": "IEEE34",
-      "mode": "authorized_physics_reject_expected",
-      "requested_load_mult": 1.02,
+      "requested_load_multiplier": 1.02,
+      "policy_mode_expected": "authorized_physics_reject",
       "command_authorized": true,
-      "dnp3_connected": null,
-      "dnp3_delivered": false,
-      "dnp3_status_readback": null,
-      "max_node_dv_pu": null,
-      "applied_safety_ok": null,
-      "rollback_max_dv_pu": null,
-      "outcome": "dnp3_not_delivered"
+      "dnp3_delivered": true,
+      "received_load_multiplier": 1.0199999809265137,
+      "dnp3_schema": "gridcad_e1b3_control_v1",
+      "station_id": 7,
+      "port": 21007,
+      "safety_accepted": false,
+      "rollback_verified": true,
+      "pass": false,
+      "physical_change_observed": true,
+      "max_node_voltage_change_pu": 0.006884826227352869,
+      "loss_change_kw": 12.235720724990358,
+      "baseline_v_pu": [
+        0.9230989327603906,
+        1.0499968561252122
+      ],
+      "node_count": 95,
+      "applied_v_pu": [
+        0.9222948607322139,
+        1.049996676784719
+      ],
+      "applied_undervoltage_nodes": 4,
+      "applied_overvoltage_nodes": 0,
+      "rollback_max_node_error_pu": 0.0,
+      "reasons": [
+        "New operating point is below 0.95 p.u."
+      ],
+      "gate_behaved_correctly": true
     },
     {
+      "run": "ieee123_safe",
       "feeder": "IEEE123",
-      "mode": "authorized_safe_expected",
-      "requested_load_mult": 1.02,
+      "requested_load_multiplier": 1.02,
+      "policy_mode_expected": "authorized_safe",
       "command_authorized": true,
-      "dnp3_connected": null,
-      "dnp3_delivered": false,
-      "dnp3_status_readback": null,
-      "max_node_dv_pu": null,
-      "applied_safety_ok": null,
-      "rollback_max_dv_pu": null,
-      "outcome": "dnp3_not_delivered"
+      "dnp3_delivered": true,
+      "received_load_multiplier": 1.0199999809265137,
+      "dnp3_schema": "gridcad_e1b3_control_v1",
+      "station_id": 7,
+      "port": 21007,
+      "safety_accepted": true,
+      "rollback_verified": true,
+      "pass": true,
+      "physical_change_observed": true,
+      "max_node_voltage_change_pu": 0.002064845875026755,
+      "loss_change_kw": 4.052311132123549,
+      "baseline_v_pu": [
+        0.9792110315255468,
+        1.0499609311749871
+      ],
+      "node_count": 278,
+      "applied_v_pu": [
+        0.9775680992584131,
+        1.0490922951682926
+      ],
+      "applied_undervoltage_nodes": 0,
+      "applied_overvoltage_nodes": 0,
+      "rollback_max_node_error_pu": 0.0,
+      "reasons": [],
+      "gate_behaved_correctly": true
     },
     {
+      "run": "ieee13_overrange",
       "feeder": "IEEE13",
-      "mode": "over_range_refused_expected",
-      "requested_load_mult": 1.1,
+      "requested_load_multiplier": 1.1,
+      "policy_mode_expected": "over_range_refused",
       "command_authorized": false,
-      "dnp3_connected": null,
       "dnp3_delivered": false,
-      "dnp3_status_readback": null,
-      "max_node_dv_pu": null,
-      "applied_safety_ok": null,
-      "rollback_max_dv_pu": null,
-      "outcome": "dnp3_not_delivered"
-    },
-    {
-      "feeder": "IEEE13",
-      "mode": "stale_envelope_reject_expected",
-      "requested_load_mult": 1.02,
-      "command_authorized": true,
-      "dnp3_connected": null,
-      "dnp3_delivered": false,
-      "dnp3_status_readback": null,
-      "max_node_dv_pu": null,
-      "applied_safety_ok": null,
-      "rollback_max_dv_pu": null,
-      "outcome": "dnp3_not_delivered"
+      "received_load_multiplier": null,
+      "dnp3_schema": null,
+      "station_id": null,
+      "port": null,
+      "safety_accepted": false,
+      "rollback_verified": false,
+      "pass": false,
+      "physical_change_observed": false,
+      "max_node_voltage_change_pu": null,
+      "loss_change_kw": null,
+      "baseline_v_pu": [
+        0.9608427430890604,
+        1.0560497125472676
+      ],
+      "node_count": 41,
+      "applied_v_pu": [
+        null,
+        null
+      ],
+      "applied_undervoltage_nodes": null,
+      "applied_overvoltage_nodes": null,
+      "rollback_max_node_error_pu": null,
+      "reasons": [
+        "No real DNP3 outstation receipt before deadline"
+      ],
+      "gate_behaved_correctly": true
     }
-  ]
+  ],
+  "notes": "IEEE34@1.02 is command-authorized but the OpenDSS physics oracle detects undervoltage (<0.95 pu) and rolls back -- the physics backstop catching an authorized-but-unsafe action. IEEE13@1.10 is refused at the command-authorization layer (outside [1.005,1.03]) and never delivered. Single-station deep dive is in dnp3_safety_gates_summary.json."
 }
