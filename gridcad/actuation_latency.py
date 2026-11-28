@@ -77,7 +77,7 @@ def main():
     summary = {"experiment": "E2_actuation_path_latency",
                "feeders": feeders,
                "interpretation": "The OpenDSS verification solve -- the per-candidate physics/applied-safety "
-                                 "check -- is tens of milliseconds even at 278 nodes; compile is a one-time cost. "
+                                 "check -- is sub-millisecond at 278 nodes (p50 ~0.3 ms) and only tens of milliseconds at 8500 nodes; compile is a one-time cost. "
                                  "The actuation path is dominated by the DNP3 command round-trip, not the solve."}
     with open(os.path.join(args.out, "actuation_latency_summary.json"), "w") as f:
         json.dump(summary, f, indent=2)

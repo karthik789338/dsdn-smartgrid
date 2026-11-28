@@ -220,7 +220,7 @@
   "caveats": [
     "False-positive physical cost is role-dependent: isolating a monitor RTU costs only observability (0 physical), isolating a voltage-support device (cap/regulator) under load stress can breach ANSI A. This evidences the device-importance weighting in the problem statement.",
     "Control isolation modeled as device/control removed from service (strongest form of the cost); a 'frozen-at-last-state' model would be a lower bound. Rollback = re-enable + physics re-converge; the SDN flow-removal itself is an O(1) OpenFlow flow-mod.",
-    "One operational number is NOT measured this session: live-ONOS failover wall-clock latency (ONOS not stood up) - the item deferred from E10; needs the testbed up.",
+    "Live-ONOS failover wall-clock latency is now measured over 7 trials (p50 2.48 s, range 1.88-3.50 s, device stayed available) - see controller_failover_summary.json.",
     "IEEE123, single stress multiplier; magnitudes indicative of the mechanism, not a worst-case bound.",
     "Rollback recovers the physical state to within ~1-2% pu, not bit-identically: discrete controls (regulator tap changers, switched caps) re-converge to a nearby step after the isolation clears (tap hysteresis), which is normal operational behavior.",
     "At this stress the all-controls reference is comfortably in-band on the lower side (vmin ~0.964) but has a mild over-voltage at one regulated node (vmax ~1.0625 > 1.05), a known IEEE123 heavy-load quirk; the false-positive cost reported here is the under-voltage direction (loss of voltage support)."

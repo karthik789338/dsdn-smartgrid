@@ -81,8 +81,8 @@
         "reconcile_idempotent": true,
         "duplicate_or_conflicting_master_block": 0,
         "master_reachable_throughout": true,
-        "live_failover_wallclock_s": null,
-        "note": "redundancy + sharding are real pilot facts; reconcile correctness is deterministic; live failover latency not measured this session (ONOS not running)."
+        "live_failover_wallclock_s": 2.48,
+        "note": "redundancy + sharding are real pilot facts; reconcile correctness is deterministic; live failover latency measured over 7 trials (p50 2.48 s, range 1.88-3.50 s, device stayed available) -- see controller_failover_summary.json."
       }
     },
     "headline": {
@@ -115,7 +115,7 @@
   "caveats": [
     "Modes detector_down/validator_down/controller_unreachable verify fail-safe CONTROL FLOW deterministically (architectural invariants).",
     "Mode rag_down issues REAL phi4-mini calls with an empty KB; unsafe_outcomes counts any physically-unsafe or master-targeting deploy.",
-    "Controller_failover: 3-instance redundancy + 8-switch sharding are REAL pilot facts; reconcile correctness is deterministic; live failover wall-clock latency is NOT measured this session.",
+    "Controller_failover: 3-instance redundancy + 8-switch sharding are REAL pilot facts; reconcile correctness is deterministic; live failover wall-clock latency measured over 7 trials (p50 2.48 s, device stayed available) -- see controller_failover_summary.json.",
     "Substrate (switch/controller/flow counts) read read-only from the E0 pilot; nothing in ~/gridcad was modified."
   ],
   "elapsed_s": 23.8
