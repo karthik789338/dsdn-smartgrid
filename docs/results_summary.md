@@ -9,7 +9,7 @@ produces. Raw outputs are in `results/`.
   accuracy 0.965 (campaign-blocked); leakage inflation only 0.031, and 0.974 accuracy under a time-blocked temporal split (train early / test late) with temporal leakage inflation only 0.022; a tree
   ensemble (RandomForest / XGBoost ~0.96) rather than a deep MLP. Cold- and
   warm-restart collapse into one class (confusion 0.516) -> 10 classes at
-  macro-F1 0.989. Output: `protocol_detector_summary.json`.
+  macro-F1 0.989. Leave-one-family-out (hold out a whole attack family, test it unseen) gives mean 0.894 detection -- 9 of 10 families flagged, master_impersonation (0.0) the one needing in-distribution examples. See `problem_statement.md` for invariants I1-I6. Output: `protocol_detector_summary.json`.
 - `replay_ablation.py` -- replay recall for the protocol detector, 0.967,
   versus 0.27 for a flow-statistics detector. Output:
   `replay_ablation_summary.json`.

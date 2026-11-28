@@ -276,6 +276,22 @@ def main():
         "verdict": "merge cold+warm restart -> 10 classes" if f1_10 >= f1_11 else "keep 11",
     }
 
+    # --- leave-one-family-out: detect an unseen attack family as attack (binary) ---
+    bi = labels.index("benign")
+    ybin = (y != bi).astype(int)
+    lofo = {}
+    for fi, fam in enumerate(labels):
+        if fam == "benign":
+            continue
+        te = np.where(y == fi)[0]
+        tr = np.where(y != fi)[0]
+        m = RandomForestClassifier(n_estimators=300, max_depth=None, random_state=0, n_jobs=-1)
+        m.fit(Xb[tr], ybin[tr])
+        pred = m.predict(Xb[te])
+        lofo[fam] = round(float((pred == 1).mean()), 4)
+    summary["leave_one_family_out_detection"] = lofo
+    summary["lofo_mean_detection"] = round(float(np.mean(list(lofo.values()))), 4)
+
     with open("results/protocol_detector_summary.json", "w") as f:
         json.dump(summary, f, indent=2)
     print(json.dumps(summary, indent=2))

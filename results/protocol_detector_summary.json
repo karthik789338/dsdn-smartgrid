@@ -131,5 +131,18 @@
     "macro_f1_11class_honest": 0.8954,
     "macro_f1_10class_merged_honest": 0.9886,
     "verdict": "merge cold+warm restart -> 10 classes"
-  }
+  },
+  "leave_one_family_out_detection": {
+    "cold_restart": 1.0,
+    "fc_fuzzing": 1.0,
+    "injection_flood": 1.0,
+    "master_impersonation": 0.0,
+    "recon_sweep": 1.0,
+    "replay": 0.9444,
+    "time_sync_manip": 1.0,
+    "unauthorized_operate": 1.0,
+    "unsol_disable_flood": 1.0,
+    "warm_restart": 1.0
+  },
+  "lofo_mean_detection": 0.8944
 }
