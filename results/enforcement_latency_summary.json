@@ -1,0 +1,41 @@
+{
+  "experiment": "GridCAD end-to-end enforcement latency budget",
+  "description": "Per-event latency from packet ingest to policy enforcement, composed from measured stage latencies. The deterministic fast path (detection + rule decision + physics verify) is reported separately from the LLM advisory path and the live SDN flow-install step.",
+  "pipeline": "packet -> detection -> decision -> physics verify -> ONOS intent -> OVS flow-install",
+  "units": "ms unless noted",
+  "fast_path_deterministic": {
+    "detection_infer": {
+      "streaming_amortized_per_pkt_ms": 0.02,
+      "single_call_p50_ms": 25.05,
+      "note": "windowed/streaming detection is ~0.02 ms/pkt (~50k pkt/s); the 25 ms single-call figure is isolated sklearn predict overhead, not the critical-path cost",
+      "source": "measured, RandomForest 300 trees on behavioural features"
+    },
+    "decision_rule_path_ms": {
+      "p50": 0.015,
+      "p99": 0.018,
+      "source": "decision_latency_summary.json (rule_path_total)"
+    },
+    "physics_verify_ms": {
+      "p50_278nodes": 0.309,
+      "p99_278nodes": 0.352,
+      "note": "sub-ms at 278 nodes; tens of ms at 8500",
+      "source": "actuation_latency_summary.json"
+    },
+    "fast_path_total_ms_streaming": 0.344,
+    "fast_path_total_ms_single_call_worstcase": 25.37
+  },
+  "llm_advisory_path": {
+    "llm_path_total_s": 1.931,
+    "llm_synthesis_s": 1.891,
+    "rag_retrieve_ms": 21.355,
+    "note": "LLM policy synthesis is advisory and OFF the enforcement critical path; the deterministic rule path (0.015 ms) enforces while the LLM proposes.",
+    "source": "decision_latency_summary.json (llm_path_total)"
+  },
+  "sdn_flow_install": {
+    "status": "requires the live ONOS + OVS cluster, which is not currently stood up on this host",
+    "onos_reactivity_reference_s": 2.48,
+    "note": "Controller mastership failover was measured at p50 2.48 s over 7 trials (controller_failover_summary.json); steady-state flow-install on a healthy cluster is far faster, but a precise packet-to-flow-table number needs the live 3-node cluster running."
+  },
+  "takeaway": "The deterministic enforcement fast path (detection + rule decision + physics verify) is sub-millisecond amortized (~0.34 ms), three to four orders of magnitude faster than the ~1.9 s LLM advisory path. GridCAD enforces on the fast path and uses the LLM only to propose, so LLM latency is not on the safety-critical enforcement path.",
+  "generated_utc": "2026-11-28T07:22:29.022567+00:00"
+}

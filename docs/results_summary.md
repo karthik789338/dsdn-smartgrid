@@ -76,3 +76,13 @@ produces. Raw outputs are in `results/`.
 ## Online mitigation retrieval
 - `live_rag_prequential.py` -- prequential (test-then-train) evaluation of the
   retrieval store; +0.83 final-window over no-retrieval, leakage ~0.
+
+## End-to-end enforcement latency
+- `enforcement_latency_summary.json` -- composes the per-event latency from packet
+  ingest to enforcement. The deterministic fast path (detection ~0.02 ms/pkt
+  amortized + rule decision 0.015 ms + physics verify ~0.3 ms) totals ~0.34 ms,
+  three to four orders of magnitude faster than the ~1.9 s LLM advisory path,
+  which only proposes and is off the critical path. The live ONOS -> OVS
+  flow-install step needs the 3-node cluster running to time precisely;
+  controller mastership reactivity was measured at p50 2.48 s
+  (`controller_failover_summary.json`).
