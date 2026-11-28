@@ -63,9 +63,14 @@
     "D_behavioral_campaignblocked_HONEST": {
       "acc": 0.9646,
       "macro_f1": 0.8954
+    },
+    "E_behavioral_timeblocked_TEMPORAL": {
+      "acc": 0.974,
+      "macro_f1": 0.8606
     }
   },
   "leakage_inflation_acc": 0.0312,
+  "temporal_leakage_inflation_acc": 0.0218,
   "leaky_top_features": [
     [
       "fc",

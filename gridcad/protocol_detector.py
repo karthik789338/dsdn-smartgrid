@@ -226,13 +226,16 @@ def main():
     accB, f1B, _ = run(Xf, y, c_tr, c_te, rf())      # full feats + campaign-blocked
     accC, f1C, _ = run(Xb, y, r_tr, r_te, rf())      # behavioural + random split
     accD, f1D, predD = run(Xb, y, c_tr, c_te, rf())  # behavioural + campaign-blocked (HONEST)
+    accE, f1E, _ = run(Xb, y, t_tr, t_te, rf())     # behavioural + time-blocked (TEMPORAL)
     summary["conditions"] = {
         "A_full_random_LEAKY":      {"acc": round(accA, 4), "macro_f1": round(f1A, 4)},
         "B_full_campaignblocked":   {"acc": round(accB, 4), "macro_f1": round(f1B, 4)},
         "C_behavioral_random":      {"acc": round(accC, 4), "macro_f1": round(f1C, 4)},
         "D_behavioral_campaignblocked_HONEST": {"acc": round(accD, 4), "macro_f1": round(f1D, 4)},
+        "E_behavioral_timeblocked_TEMPORAL": {"acc": round(accE, 4), "macro_f1": round(f1E, 4)},
     }
     summary["leakage_inflation_acc"] = round(accA - accD, 4)
+    summary["temporal_leakage_inflation_acc"] = round(accA - accE, 4)
 
     # --- feature importance in the leaky model (what it leaned on) ---
     mimp = rf(); mimp.fit(Xf[r_tr], y[r_tr])

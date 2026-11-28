@@ -6,7 +6,7 @@ produces. Raw outputs are in `results/`.
 ## Detection
 - `protocol_detector.py` -- DNP3 protocol-feature detector on the real benign
   capture plus synthesized attack families (11 classes). Honest, identity-free
-  accuracy 0.965 (campaign-blocked); leakage inflation only 0.031; a tree
+  accuracy 0.965 (campaign-blocked); leakage inflation only 0.031, and 0.974 accuracy under a time-blocked temporal split (train early / test late) with temporal leakage inflation only 0.022; a tree
   ensemble (RandomForest / XGBoost ~0.96) rather than a deep MLP. Cold- and
   warm-restart collapse into one class (confusion 0.516) -> 10 classes at
   macro-F1 0.989. Output: `protocol_detector_summary.json`.
